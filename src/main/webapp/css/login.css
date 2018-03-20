@@ -1,0 +1,205 @@
+.mian{
+	width: 100%;
+	min-width: 1200px;
+	overflow: hidden;
+	background-color: #fafbfc ;
+}
+.mian_content{
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	background:url(../img/login/bj.png) no-repeat;
+	padding-top: 75px;
+	margin-top: 75px;
+	padding-bottom: 115px;
+}
+.row:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.mian_content_img{
+	float: left;
+	margin-left: 125px;
+	text-align: center;
+	width: 336px;
+}
+.mian_content_img>img{
+	margin-bottom: 30px;
+}
+.mian_content_cnt{
+	width: 402px;
+	height: 410px;
+	background-color: #fff;
+	float: left;
+	margin-left: 145px;
+	box-shadow: 0px 4px 4px 4px rgba(0,0,0,0.1);
+	position: relative;
+}
+.tab{
+	width: 100%;
+	height: 56px;
+	line-height: 56px;
+}
+.tab>span{
+	width: 50%;
+	font-size: 18px;
+	color: #333333;
+	text-align: center;
+	display:block;
+	float: left;
+	height: 56px;
+	cursor: pointer;
+}
+.tab>.bj_color{
+	background-color: #f2f2f2;
+	color: #adadad;
+}
+.zhdl{
+	padding-left: 32px;
+	padding-right: 32px;
+}
+.user_name{
+	width: 336px;
+	height: 46px;
+	margin-top: 48px;
+	border: 1px solid #cbcbcb;
+	
+}
+.user_img,.trends_password>div>span{
+	width: 45px;
+	height: 44px;
+	border-right:1px solid #CBCBCB ;
+	display: block;
+	float: left;
+	position: relative;	
+}
+.user_img>img,.trends_password>div>span>img{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.user_name>input,.user_password>input{
+	float: left;
+	width: 289px;
+	height: 44px;
+	border: none;
+	outline: none;
+	text-indent: 10px;
+	font-size: 14px;
+	color: #666666;
+}
+.user_password{
+	width: 336px;
+	height: 46px;
+	margin-top: 17px;
+	border: 1px solid #cbcbcb;
+}
+.user_interlinkage{	
+	margin-top: 19px;	
+}
+.user_interlinkage>a{
+	font-size: 14px;
+	line-height: 1em;
+}
+.user_interlinkage>.ljzc{
+	float: left;
+	color: #0eb612;
+}
+.user_interlinkage>.wjmm{
+	float: right;
+	color: #999999;
+}
+.user_interlinkage>.wjmm:hover{
+	color: #0eb612;
+	text-decoration: underline;
+}
+.user_bnt_login{
+	background-color: #0eb612;
+	width: 336px;
+	height: 46px;
+	line-height: 46px;
+	text-align: center;
+	color: #ffffff;
+	font-size: 16px;
+	margin-top: 14px;
+	cursor: pointer;
+	margin-bottom: 28px;
+}
+
+.user_qtfsdl>*{
+	float: left;
+	height: 40px;
+	display: block;
+	line-height: 40px;
+}
+.user_qtfsdl>span{
+	margin-right: 3px;
+	font-size: 14px;
+	color: #999;
+}
+.user_qtfsdl>img{
+	margin-right: 12px;
+	cursor: pointer;
+}
+
+.sjkjdl{
+	padding-left: 32px;
+	padding-right: 32px;
+	display: none;
+}
+.trends_password{
+	width: 336px;
+	height: 46px;
+	margin-top: 17px;
+	margin-bottom: 17px;
+}
+.trends_password>div{
+	width: 200px;
+	height: 46px;
+	border: 1px solid #cbcbcb;
+	float: left;	
+}
+.trends_password>button{
+	float: right;
+	width: 126px;
+	height: 46px;
+	border: none;
+	outline: none;
+	background-color: #0eb612;
+	color: #fff;
+	cursor: pointer;
+}
+.mar-bttom{
+	margin-bottom: 17px !important;
+}
+.trends_password>div>input{
+	width: 153px;
+	height: 44px;
+	border: none;
+	outline: none;
+	text-indent: 10px;
+}
+.tishi{
+	position: absolute;
+	line-height: 2.2em;
+	border: 1px solid #f26358;
+	width: 336px;
+	font-size: 12px;
+	color: #999;
+	top: 67px;
+	display: none;
+	
+}
+.tishi>img{
+	margin-left: 7px;
+	margin-right: 4px;
+	vertical-align: -3px;
+}
+.border-color1{
+	border-color: #0eb612 !important;
+}
+.border-color2{
+	border-color: #f26358 !important;
+}

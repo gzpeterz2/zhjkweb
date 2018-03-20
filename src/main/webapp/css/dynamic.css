@@ -1,0 +1,95 @@
+.video-banner {
+  width: 100%;
+  height: 352px;
+  min-width: 1200px;
+  overflow: hidden;
+  position: relative; }
+  .video-banner > img {
+    position: absolute;
+    height: 100%;
+    width: auto;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1; }
+
+.content {
+  width: 100%;
+  min-width: 1200px;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #D9D9D9; }
+  .content .d_cnt {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0.1px; }
+    .content .d_cnt:after {
+      content: "";
+      display: block;
+      clear: both; }
+    .content .d_cnt .title {
+      font-size: 14px;
+      color: #666666;
+      margin: 20px 0 10px; }
+      .content .d_cnt .title a {
+        color: #666666; }
+    .content .d_cnt .d_mian {
+      float: left;
+      width: 860px;
+      background: #FFFFFF;
+      padding: 14px 30px 0 40px;
+      margin-bottom: 29px; }
+      .content .d_cnt .d_mian .pages {
+        margin: 30px auto 40px; }
+        .content .d_cnt .d_mian .pages ul {
+          width: 100%;
+          height: 28px;
+          text-align: center;
+          font-size: 0; }
+          .content .d_cnt .d_mian .pages ul li {
+            display: inline-block;
+            vertical-align: top;
+            padding: 0 10px;
+            height: 28px;
+            line-height: 28px;
+            font-size: 14px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px; }
+            .content .d_cnt .d_mian .pages ul li:nth-of-type(2) a {
+              font-family: simsun; }
+            .content .d_cnt .d_mian .pages ul li:nth-last-child(2) a {
+              font-family: simsun; }
+          .content .d_cnt .d_mian .pages ul li ~ li {
+            margin-left: 9px; }
+          .content .d_cnt .d_mian .pages ul .current {
+            background: #0b72cb; }
+            .content .d_cnt .d_mian .pages ul .current a {
+              color: #fff; }
+      .content .d_cnt .d_mian .mian_list {
+        height: 985px;
+        overflow: hidden; }
+        .content .d_cnt .d_mian .mian_list li {
+          padding: 16px 0;
+          border-bottom: 1px solid #E6E6E6; }
+          .content .d_cnt .d_mian .mian_list li a {
+            font-size: 16px;
+            color: #333333; }
+            .content .d_cnt .d_mian .mian_list li a time {
+              float: right;
+              font-family: ArialMT;
+              font-size: 16px;
+              color: #999999; }
+    .content .d_cnt .d_right {
+      float: right;
+      width: 310px; }
+      .content .d_cnt .d_right a {
+        display: block;
+        width: 310px;
+        height: 244px;
+        margin-bottom: 25px; }
+        .content .d_cnt .d_right a img {
+          width: 100%;
+          height: auto; }
+
+/*# sourceMappingURL=dynamic.css.map */

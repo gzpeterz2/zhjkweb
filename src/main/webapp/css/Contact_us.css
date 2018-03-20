@@ -1,0 +1,59 @@
+.video-banner {
+  width: 100%;
+  height: 352px;
+  min-width: 1200px;
+  background-image: url(../img/contact_us/LXWM.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative; }
+  .video-banner div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    .video-banner div span {
+      font-size: 18px;
+      color: #ffffff; }
+    .video-banner div p {
+      font-size: 30px;
+      color: #feffff;
+      margin-bottom: 9px; }
+
+.content {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 43px;
+  padding-bottom: 44px; }
+  .content .headquarters {
+    color: #333333;
+    font-size: 16px;
+    line-height: 25px; }
+    .content .headquarters:after {
+      content: "";
+      display: table;
+      clear: both; }
+    .content .headquarters .h_left {
+      float: left;
+      width: 50%; }
+    .content .headquarters .h_right {
+      float: right;
+      width: 50%; }
+  .content hr {
+    border: transparent;
+    height: 1px;
+    background-color: #D9D9D9;
+    margin-top: 29px;
+    margin-bottom: 30px;
+    width: 977px;
+    margin-left: 20px;
+    display: block; }
+
+.c_bottom {
+  width: 100%;
+  min-width: 1200px;
+  height: 1px;
+  background-color: #D9D9D9;
+  border: none; }
+
+/*# sourceMappingURL=Contact_us.css.map */

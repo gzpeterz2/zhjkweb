@@ -1,0 +1,21 @@
+$(function(){
+	$(".center2_mian_yhm_xgyhm").click(function(){
+		$(".center2_mian_yhm_block").css("display","none");
+		$(".center2_mian_yhm_none").css("display","block");
+	});
+	$(".queding").click(function(){
+		if($(".center2_mian_yhm_none>input").val().replace(/(^\s*)|(\s*$)/g, "").length>0){
+			$(".center2_mian_yhm_name").html($(".center2_mian_yhm_none>input").val());
+			$(".center2_mian_yhm_block").css("display","block");
+			$(".center2_mian_yhm_none").css("display","none");
+			$(".center2_mian_yhm_xgyhm").css("display","none");
+		}else{
+			alert("昵称不能为空")
+		}
+	});
+	$(".quxiao").click(function(){
+		$(".center2_mian_yhm_block").css("display","block");
+		$(".center2_mian_yhm_none").css("display","none");
+		$(".center2_mian_yhm_none>input").val("");
+	})
+})

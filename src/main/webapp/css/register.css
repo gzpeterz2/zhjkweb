@@ -1,0 +1,78 @@
+.register_mian{
+	height: 533px !important;
+	padding: 43px 32px 29px;
+}
+.register_mian_title{
+	line-height: 1em;
+	color: #333333;
+	font-size: 18px;
+	font-weight: normal;
+	margin-bottom: 26px;
+}
+.one{
+	width: 336px;
+	height: 46px;
+	border: 1px solid #cbcbcb;
+	margin-bottom: 17px;
+}
+.one>input{
+	float: left;
+	width: 289px;
+	height: 44px;
+	border: none;
+	outline: none;
+	text-indent: 10px;
+	font-size: 14px;
+	color: #666666;
+}
+.yzm{
+	width: 336px;
+	height: 46px;
+	margin-top: 17px;
+	margin-bottom: 26px;
+}
+.yzm>div{
+	width: 200px;
+	height: 46px;
+	border: 1px solid #cbcbcb;
+	float: left;	
+}
+.yzm>div>span{
+	width: 45px;
+	height: 44px;
+	display: block;
+	float: left;
+	position: relative;	
+}
+.yzm>div>span>img{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.yzm>div>input{
+	width: 153px;
+	height: 44px;
+	border: none;
+	outline: none;
+	text-indent: 10px;
+}
+.yzm>button{
+	float: right;
+	width: 126px;
+	height: 46px;
+	border: none;
+	outline: none;
+	background-color: #0eb612;
+	color: #fff;
+	cursor: pointer;
+}
+.yyzh{
+	text-align: center;
+	margin-top: 30px;
+	font-size: 14px;
+	color: #333;
+}
+.yyzh>a{
+	color: #0eb612;
+}

@@ -1,0 +1,368 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-family: "microsoft yahei";
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+/*顶部样式*/
+.common-header{
+    width: 100%;
+    /*搜索框*/
+    .blocker{
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0,0,0,.5);
+        z-index: 999;
+        .search{
+            width: 100%;
+            height: 0px;
+            padding-top: 0px;
+            overflow: hidden;
+            background: #fff;
+            text-align: center;
+            img{
+                vertical-align: middle;
+                margin: 0 23px;
+                cursor: pointer;
+            }
+            input{
+                border: none;
+                outline: none;
+                color: #4d4d4d;
+                font-size: 14px;
+                width: 375px;
+            }
+        }
+    }
+    /*顶部*/
+    .header{
+        background: #4e5055;
+        width: 100%;
+        >div{
+            width: 1200px;
+            min-width: 1200px;
+            margin: 0 auto;
+            height: 30px;
+            /*左*/
+            >img{
+                float: left;
+                vertical-align: middle;
+                padding-top: 7px;
+            }
+            /*右*/
+            >div{
+                float: right;
+                width: 750px;
+                font-size: 12px;
+                >img{
+                    margin-top: 1px;
+                    float: right;
+                    padding-top: 7px;
+                }
+                #co-hd-search{
+                    width: 14px;
+//                  height: 14px;
+                    cursor: pointer;
+                    padding-top: 7px;
+                }
+                >ol{
+                    margin:0 13px;
+                    float: right;
+                    padding-top: 7px;
+                    li{
+//                      width: 60px;
+                        float: left;
+                        padding: 0 10px;
+                        a{
+                            color: #F3F3F3;
+                        }
+                    }
+                    li:last-child{
+                        border-left: 1px solid #f3f3f3;
+                    }
+                }
+                #common-login{
+                    width: 130px;
+                    float: right;
+                    margin: 0 15px;
+                    height: 30px;
+                    position: relative;
+                    ul{
+                        width: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 888;
+                        
+                        transition: background .1s;
+                        li{
+                            padding: 0 12px;
+                            width:100%;
+                            height: 0px;
+                            overflow: hidden;
+                            transition: height .3s;
+                        }
+                        li:first-child{
+                            padding-top: 7px;
+                            height: 30px;
+                            img{
+                                float: left;
+                                margin-top: -2px;
+                            }
+                            span{
+                                color: #F3F3F3;
+                                display: inline-block;
+                                float: left;
+                                width: 50px;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                margin: -1px 0 0 10px;
+                            }
+                            #arrow-right{
+                                margin-top: 7px;
+                            }
+                        }
+                        li~li{
+                            font: 14px/40px "microsoft yahei";
+                            text-align: center;
+                            color:#666;
+                            a{
+                                display: inline-block;
+                                width: 100%;
+                                height: 100%;
+                                span{
+                                    color: #245FCE;
+                                }
+                            }
+                        }
+                    }
+                    #arror-right{
+                        margin-top: 7px;
+                        float: right;
+                    }
+                }
+                >span{
+                    margin-left: 20px;
+                    float: right;
+                    color: #f3f3f3;
+                    padding-top: 6px;
+                }
+            }
+        }
+    }
+    /*导航栏*/
+    .nav{
+        $height:109px;
+        width: 1200px;
+        margin: 0 auto;
+        padding-top: 0px;
+        height: $height;
+        /*logo*/
+        >a{
+            display: inline-block;
+            float: left;
+            margin-top: 24px;
+//          img{
+//          }
+        }
+        
+        /*导航栏*/
+        ul{
+            float: right;
+            height: 100%;
+            >li{
+                float: left;
+                height: $height;
+                font-size: 16px;
+                padding: 0 19px;
+                margin: 0 8px;
+                position: relative;
+                transition: all .3s;
+                &:hover{
+                    border-bottom: 4px solid #245FCE;
+                }
+                &:hover > a{
+                    color:#245FCE;
+                }
+                >a{
+                    line-height: $height;
+                    text-decoration: none;
+                }
+                /*下拉框*/
+                >ol{
+                    width: 100%;
+                    height: 0;
+                    background-color: rgba(255,255,255,.92);
+                    position: absolute;
+                    top: $height;
+                    left:0;
+                    border-radius: 0 0 4px 4px;
+                    text-align: center;
+                    overflow: hidden;
+                    transition: height .3s;
+                    padding-top: 0px;
+                    z-index: 40;
+                    li{
+                        height:36px;
+                        font-size: 14px;
+                        a{
+                            &:hover{
+                                color:#245FCE;
+                            } 
+                        }
+                        &:first-child{
+                            margin-top: 19px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*底部*/
+.common-footer{
+    width: 100%;
+    /*白色横向列表*/
+    .white{
+        width: 100%;
+        background: #fff;
+        ul{
+            height: 90px;
+            width: 1200px;
+            margin: 0 auto;
+            padding-top: 30px;
+            li{
+                float: left;
+                height: 32px;
+                padding: 0 41px;
+                img{
+                    vertical-align: middle;
+                    margin-right:11px;
+                }
+                span{
+                    font: 16px/16px "microsoft yahei";
+                    color: #4d4d4d;
+                }
+            }
+            li~li{
+                border-left: 1px solid #d9d9d9;
+            }
+            li:first-child{
+                padding-left: 0;
+            }
+            li:last-child{
+                padding-right: 0;
+            }
+        }
+    }
+    /*黑色区域，公司信息*/
+    .black{
+        width: 100%;
+        background: #3c3d40;
+        /*友情链接*/
+        .top{
+            margin: 0 auto;
+            width: 1200px;
+            height: 151px;
+            border-bottom: 1px solid #666;
+            p{
+                height: 70px;
+                padding-top: 30px;
+                img{
+                    vertical-align: middle;
+                    margin-right: 5px;
+                }
+                span{
+                    font-size: 16px;
+                    color: #e6e6e6;
+                }
+            }
+            ul{
+                height: 70px;
+                margin: 0 auto;
+                width: 1200px;
+                li{
+                    float: left;
+                    margin-right: 28px;
+                    margin-bottom: 20px;
+                    height: 14px;
+                    line-height: 14px;
+                    a{
+                        color: #E6E6E6;
+                        font-size: 14px;
+                        line-height: 14px;
+                        &:hover{
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+         /*课程设置，联系方式，二维码*/
+        .middle{
+            width: 1200px;
+            margin: 0 auto;
+            height: 198px;
+            padding-top: 38px;
+            ul{
+                float: left;
+                margin-right: 80px;
+                li{
+                    margin-bottom: 20px;
+                    height: 14px;
+                    line-height: 14px;
+                    a{
+                        color: #d9d9d9;
+                        font-size: 14px;
+                        &:hover{
+                            color:#fff;
+                        }
+                    }
+                    &:first-child{
+                        height: 16px;
+                        line-height: 16px;
+                        color: #e6e6e6;
+                        font-size: 16px;
+                    }
+                }
+                .common-other{
+                    color: #d9d9d9;
+                    font-size: 14px;
+                }
+            }
+            /*二维码*/
+            div{
+                font-size: 0;
+                img{
+                    margin-right: 29px;
+                }
+            }
+        }
+        /*商标及版权*/
+        .bottom{
+            height: 52px;
+            width: 1200px;
+            margin: 0 auto;
+            img{
+                margin-right: 30px;
+                vertical-align: middle;
+            }
+            span{
+                color: #ccc;
+                font-size: 14px;
+            }
+        }
+    }
+}

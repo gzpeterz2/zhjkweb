@@ -1,0 +1,184 @@
+.mian{
+    width: 100%;
+    min-width: 1200px;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #D9D9D9;
+    
+    .content{
+        width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        overflow:hidden;
+        padding-bottom: 30px;
+        &:after{
+        content: "";
+        display: block;
+        clear: both;
+        }
+        .title{
+            font-size: 14px;
+            color: #666666;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            a{
+                color: #666666;
+            }
+        }
+        .cnt_left{
+            float: left;
+            width: 915px;
+            height: 700px;
+            background-color: #FFFFFF;
+            padding: 0 30px;
+            .published{
+                font-size: 21px;
+                color: #333333;
+                margin-top: 18px;
+                margin-bottom: 21px;
+            }
+            .headline{
+                width: 528px;
+                height: 50px;
+                border: 1px solid #eeeeee;
+                text-indent: 10px;
+                font-size: 15px;
+                color: #999999;
+                margin-bottom: 26px;
+                display: block;
+            }
+            .cover{
+                display: none;
+            }
+            .coverlable{
+                display: inline-block;
+                text-align: center;
+                width: 138px;
+                height: 43px;
+                line-height: 43px;
+                font-size: 14px;
+                color: #FFFFFF;
+                background-color: #245FCE;
+                margin-right: 20px;
+            }
+            .lb_prompt{
+                color: #999999;
+                font-size: 14px;
+            }
+            .cnt_cnt{
+                width: 853px;
+                height: 336px;
+                border: 1px solid #D9D9D9;
+                margin-top: 25px;
+                position: relative;
+                overflow: hidden;
+                .textnum{
+                    position: absolute;
+                    right: 10px;
+                    bottom: 10px;
+                    z-index: 999;
+                    font-size: 12px;
+                    color: #999999;
+                }
+                
+            }
+            .plate{
+                position: relative;
+                margin-top: 18px;
+                input[type="radio"] {
+                    width: 20px;
+                    height: 20px;
+                    opacity: 0;
+                  
+                }
+                label+span{
+                    margin-left: 25px;
+                }
+                
+                label{
+                    position: absolute;
+                    top: 6px;
+                    width: 18px;
+                    height: 18px;
+                    border-radius: 50%;
+                    border: 1px solid #D9D9D9;
+                    
+                }
+                input:checked+label { 
+                    background-color: #FFFFFF;
+                    border: 1px solid #D9D9D9;
+                }
+        
+                input:checked+label::after {
+                position: absolute;
+                content: "";
+                width: 10px;
+                height: 10px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                background: #245FCE;
+                border-radius: 50%;
+              
+                }
+               
+                    
+            }
+            .issue{
+                width: 138px;
+                height: 43px;
+                line-height: 43px;
+                text-align: center;
+                background-color: #245fce;
+                display: block;
+                color: #f5f5f5;
+                margin-top: 20px;
+            }
+        }
+        .cnt_right{
+            width: 260px;
+            height: 300px;
+            float: right;
+            background: #FFFFFF;
+            border: 1px solid #D9D9D9;
+            h3{
+                  margin-bottom: 20px;    
+                  }
+             padding: 20px;
+            .hot_list{
+                  
+                    li{
+                       position: relative;
+                       padding-left:5px; 
+                       
+                       a{
+                           line-height: 1.8em;
+                          font-size: 14px;
+                          overflow: hidden;
+                       white-space: nowrap;
+                       text-overflow: ellipsis;
+                       }
+                       &:hover>a{
+                           color: #245FCE;
+                       }
+                       &:hover{
+                           &:before{
+                               background-color: #245FCE;
+                           }
+                       }
+                       &:before{
+                           position: absolute;
+                           content: "";
+                           display: block;
+                           width: 5px;
+                           height: 5px;
+                           border-radius: 50%;
+                           background-color: #ff0700;
+                           top: 50%;
+                           left: -5px;
+                           transform: translateY(-50%);
+                       }
+                    }
+                }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.yzzh_user{
+	padding: 43px 32px 29px;
+	height: 314px !important;
+}
+.yzm>div>input{
+	width: 100% !important;
+}
+.two{
+	width: 336px;
+	height: 46px;
+	border: 1px solid #cbcbcb;
+	margin-bottom: 17px;
+}
+.two>input{
+	border: none;
+	outline: none;
+	text-indent: 10px;
+	width: 100%;
+	height: 100%;
+	
+}

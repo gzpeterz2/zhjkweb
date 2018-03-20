@@ -1,0 +1,96 @@
+/*轮播图*/
+.index-banner{
+    width: 100%;
+    height: 450px;
+    background: url(../img/index/3.png) no-repeat;
+}
+/*广告*/
+.index-ad{
+    width: 100%;
+    background: #efeff6;
+    ul{
+        padding-top: 20px;
+        height: 160px;
+        width: 1200px;
+        margin: 0 auto;
+    }
+    li{
+        float: left;
+        width: 381px;
+        height: 140px;
+        a{
+            display: inline-block;
+            vertical-align: top;
+            width: 381px;
+            height: 140px;
+            background: lightsalmon;
+        }
+    }
+    li~li{
+        margin-left: 28px;
+    }
+}
+/*精品教学视频*/
+.index-video{
+    width: 100%;
+    height: 360px;
+    padding-top: 37px;
+    background: #efeff6;
+    >p{
+        width: 1200px;
+        height: 24px;
+        margin: 0 auto;
+        border-left: 4px solid #245FCE;
+        font-size: 18px;
+        padding-left: 12px;
+        margin-bottom: 17px;
+    }
+    ul{
+        height: 240px;
+        width: 1200px;
+        margin: 0 auto;
+        li{
+            float: left;
+            height: 232px;
+            width: 280px;
+            a{
+                display: block;
+                height: 232px;
+                width: 280px;
+                >div:first-child{
+                    height: 170px;
+                    background: greenyellow;
+                }
+                >div:last-child{
+                    padding-top: 13px;
+                    padding-left: 15px;
+                    background: #FFF;
+                    height: 62px;
+                    p:first-child{
+                       font-size: 14px;
+                       margin-bottom: 8px;
+                       height: 14px;
+                       line-height: 14px;
+                    }
+                    p:last-child{
+                        height: 12px;
+                        line-height: 12px;
+                        img{
+                            margin-right: 4px;
+                            vertical-align: middle;
+                        }
+                        span{
+                            height:12px;
+                            line-height: 12px;
+                            font-size: 12px;
+                            color: #999;
+                        }
+                    }
+                }
+            }
+        }
+        li~li{
+            margin-left: 26px;
+        }
+    }
+}

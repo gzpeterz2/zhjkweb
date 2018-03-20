@@ -1,0 +1,57 @@
+.special_button{
+  /*margin-top: -8px;*/
+  /*height: 75px;
+  width: 317px;*/
+  width: 1200px !important; 
+  height: 66px !important;
+  margin: 0 auto 30px !important;
+  position: relative !important;
+  /*background: url(../img/home/hj_1.png) no-repeat;*/
+  
+}
+.special_button>a{
+  display: inline-block !important;
+  height: 66px !important;
+  padding: 0 80px !important;
+  border-radius: 33px !important;
+  line-height: 66px !important;
+  background: linear-gradient(to bottom,#1f91e4,#1964cf) !important;
+  font-size: 30px !important;
+  color: #fff !important;
+  position: absolute !important;
+  top: -8px !important;
+  left: 50% !important;
+  transform: translate(-50%) !important;
+  transition: all .5s !important;
+  z-index: 20 !important;
+  text-align: center !important;
+  white-space: nowrap;
+}
+
+.special_button>.bm{
+	background: linear-gradient(to bottom,#fa5282,#fd5a5c) !important;
+}
+
+.special_button>.bg{
+	background: #ac4245 !important;
+}
+
+.special_button>span{
+  display: inline-block !important;
+  height: 66px !important;
+  padding: 0 80px !important;
+  border-radius: 33px !important;
+  line-height: 66px !important;
+  background: #114a99 !important;
+  font-size: 30px !important;
+  color: #114a99 !important;
+  position: absolute !important;
+  top: 0px !important;
+  text-align: center !important;
+  left: 50% !important;
+  transform: translate(-50%) !important;
+  white-space: nowrap;
+}
+.special_button>a:hover{
+  top: 0px !important;
+}
