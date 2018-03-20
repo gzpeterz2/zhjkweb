@@ -22,8 +22,8 @@
 			<ul class="banner_items">
 				<!--<li class="xianshi"><img src="img/home/3.png"/><a href="JavaScript:;"></a></li>-->
 				<li class="xianshi" ><img src="${index.pic1}"/><a href="h5.html"></a></li>
-				<li <!--style="background: url('img/home/Java-banner.jpg') center center/auto 100%;"-->><img src="img/home/Java-banner.jpg"/><a href="java.html"></a></li>
-				<li <!--style="background: url('img/home/UI-banner.jpg') center center/auto 100%;"-->><img src="img/home/UI-banner.jpg"/><a href="ui.html"></a></li>
+				<li ><img src="img/home/Java-banner.jpg"/><a href="java.html"></a></li>
+				<li ><img src="img/home/UI-banner.jpg"/><a href="ui.html"></a></li>
 			</ul>
 			<ul class="banner_lists">
 				<li class="bg_color"></li>
