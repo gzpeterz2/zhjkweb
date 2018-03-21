@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class TestController {
 	
-	@RequestMapping("/index.action")
+	@RequestMapping("/test.action")
 	public ModelAndView test() {
 		ModelAndView mv = new ModelAndView();
 		
