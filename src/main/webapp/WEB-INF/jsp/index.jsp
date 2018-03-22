@@ -23,7 +23,7 @@
 				<!--<li class="xianshi"><img src="img/home/3.png"/><a href="JavaScript:;"></a></li>-->
 				<li class="xianshi" ><img src="${homePage.bigBanner1.src}"/><a href="h5.html"></a></li>
 				<li ><img src="${homePage.bigBanner2.src}"/><a href="java.html"></a></li>
-				<li ><img src="${homePage.bigBanner3.src}"/><a href="${homePage.bigBanner3.url}"></a></li>
+				<li ><img src="${homePage.bigBanner3.src}"/><a href="${homePage.bigBanner2.url}"></a></li>
 			</ul>
 			<ul class="banner_lists">
 				<li class="bg_color"></li>
