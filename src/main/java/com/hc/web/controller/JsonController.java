@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.hc.web.po.Banner;
 import com.hc.web.po.Succstudent;
 import com.hc.web.service.JsonService;
 
@@ -20,6 +21,12 @@ public class JsonController {
 	@RequestMapping("/succstudent.action")
 	public @ResponseBody List<Succstudent> succstudentList() throws Exception {
 		List<Succstudent> list = jsonService.getSuccList();
+		return list;
+	}
+
+	@RequestMapping("/homeBanner.action")
+	public @ResponseBody List<Banner> getHomeBanner() throws Exception {
+		List<Banner> list = jsonService.getHomeBanner();
 		return list;
 	}
 }
