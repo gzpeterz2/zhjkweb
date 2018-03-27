@@ -4,7 +4,7 @@ public class Succstudent {
 	private Integer id;
 	private String name;
 	private String degree;
-	private String enterpirze;
+	private String enterprize;
 	private Integer salary;
 	private String career;
 	public Integer getId() {
@@ -25,11 +25,12 @@ public class Succstudent {
 	public void setDegree(String degree) {
 		this.degree = degree;
 	}
-	public String getEnterpirze() {
-		return enterpirze;
+	
+	public String getEnterprize() {
+		return enterprize;
 	}
-	public void setEnterpirze(String enterpirze) {
-		this.enterpirze = enterpirze;
+	public void setEnterprize(String enterprize) {
+		this.enterprize = enterprize;
 	}
 	public Integer getSalary() {
 		return salary;
@@ -45,7 +46,7 @@ public class Succstudent {
 	}
 	@Override
 	public String toString() {
-		return "Succstudent [id=" + id + ", name=" + name + ", degree=" + degree + ", enterpirze=" + enterpirze
+		return "Succstudent [id=" + id + ", name=" + name + ", degree=" + degree + ", enterprize=" + enterprize
 				+ ", salary=" + salary + ", career=" + career + "]";
 	}
 	
