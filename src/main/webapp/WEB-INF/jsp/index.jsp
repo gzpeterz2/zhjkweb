@@ -14,6 +14,8 @@
 		<title>知海匠库</title>
 		<script type="text/javascript" src="js/jquery.min.js" ></script>
 		<script type="text/javascript" src="js/link-common.js" ></script>
+		<script type="text/javascript" src="js/home.js"></script>
+		<script type="text/javascript" src="js/studentlist.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/home.css"/>
 		<link rel="stylesheet" type="text/css" href="css/base.css"/>
 	</head>
@@ -188,7 +190,7 @@
 					<h1 class="title">从这里出发 , BAT不再是梦</h1>
 					<p class="titles">独特1+3+0.5 开创互联网人才培养新模式、各大名企都有我们知海人的身影</p>
 					<div class="bat_img">
-						<img src="img/home/组17.png" alt="" />
+						<img src="img/home/pic17.png"/>
 						<div class="special_button">
 							<a href="JavaScript:;">了解更多关于他们的故事</a>
 							<span>了解更多关于他们的故事</span>
@@ -213,7 +215,7 @@
 								</tr>
 							</thead>
 							<tbody class="job_list">
-								<tr>
+								<!--<tr>
 									<td>李*华</td>
 									<td>本科</td>
 									<td>广州筷**科技</td>
@@ -289,7 +291,7 @@
 									<td>广州筷**科技</td>
 									<td>8000</td>
 									<td>UID设计</td>
-								</tr>
+								</tr>-->
 							</tbody>
 						</table>
 					</div>
@@ -328,5 +330,4 @@
 			</div>
 		</div>
 	</body>
-	<script src="js/home.js"></script>
 </html>
