@@ -1,12 +1,6 @@
 $(function(){
-	var url = "json/succstudent.action";
-	$.post(url,function(data){
-		$(data).each(function(i,n){
-			var tr_bg=i%2?"#f2f2fa":"#e6ebf6";
-			$(".job_list").append("<tr style='background:"+tr_bg+";'><td>"+n.name+"</td><td>"+n.degree+"</td><td>"+n.enterprize+"</td><td>"+n.salary+"</td><td>"+n.career+"</td></tr>")
-		});
-		
-	},"json");
+	
+	showStudentList();
 /*	//学生列表ajax数据获取
 	var succstudent=$.ajax({url:"http://localhost/zhjkweb/json/succstudent.action",type:"GET",async:false});
 	succstudent=succstudent.responseJSON;
@@ -29,4 +23,12 @@ $(function(){
 	}*/
 	
 })
-
+function showStudentList(){
+	var url = "json/succstudent.action";
+	$.post(url,function(data){
+		$(data).each(function(i,n){
+			var tr_bg=i%2?"#f2f2fa":"#e6ebf6";
+			$(".job_list").append("<tr style='background:"+tr_bg+";'><td>"+n.name+"</td><td>"+n.degree+"</td><td>"+n.enterprize+"</td><td>"+n.salary+"</td><td>"+n.career+"</td></tr>")
+		});
+	},"json");
+}

@@ -203,7 +203,7 @@
 				<div class="growth_cnt">
 					<h1 class="title">从<span>无到有</span> , 茁壮成长</h1>
 					<p class="titles">往届知海人都各自找到了自己满意的工作 , 现在的收入往往是以前所不敢想的<br />而这些 , 仅仅是他们的起点</p>
-					<div class="list">
+					<div class="list" id="rollCon">
 						<table>
 							<thead>
 								<tr>
@@ -214,85 +214,8 @@
 									<td class="zy">职业</td>
 								</tr>
 							</thead>
-							<tbody class="job_list">
-								<!--<tr>
-									<td>李*华</td>
-									<td>本科</td>
-									<td>广州筷**科技</td>
-									<td>7000</td>
-									<td>UID设计</td>
-								</tr>
-								<tr>
-									<td>李*华</td>
-									<td>本科</td>
-									<td>广州筷**科技</td>
-									<td>7000</td>
-									<td>UID设计</td>
-								</tr>
-								<tr>
-									<td>李*华</td>
-									<td>本科</td>
-									<td>广州筷**科技</td>
-									<td>7000</td>
-									<td>UID设计</td>
-								</tr>
-								<tr>
-									<td>李*华</td>
-									<td>本科</td>
-									<td>广州筷**科技</td>
-									<td>7000</td>
-									<td>UID设计</td>
-								</tr>
-								<tr>
-									<td>李*华</td>
-									<td>本科</td>
-									<td>广州筷**科技</td>
-									<td>7000</td>
-									<td>UID设计</td>
-								</tr>
-								<tr>
-									<td>李*华</td>
-									<td>本科</td>
-									<td>广州筷**科技</td>
-									<td>7000</td>
-									<td>UID设计</td>
-								</tr>
-								<tr>
-									<td>李*华</td>
-									<td>本科</td>
-									<td>广州筷**科技</td>
-									<td>7000</td>
-									<td>UID设计</td>
-								</tr>
-								<tr>
-									<td>李*华</td>
-									<td>本科</td>
-									<td>广州筷**科技</td>
-									<td>7000</td>
-									<td>UID设计</td>
-								</tr>
-								<tr>
-									<td>李*华</td>
-									<td>本科</td>
-									<td>广州筷**科技</td>
-									<td>7000</td>
-									<td>UID设计</td>
-								</tr>
-								<tr>
-									<td>李*华</td>
-									<td>本科</td>
-									<td>广州筷**科技</td>
-									<td>7000</td>
-									<td>UID设计</td>
-								</tr>
-								<tr>
-									<td>李*华</td>
-									<td>本科</td>
-									<td>广州筷**科技</td>
-									<td>8000</td>
-									<td>UID设计</td>
-								</tr>-->
-							</tbody>
+							<tbody class="job_list" id="rollSubject"></tbody>
+							<tbody id="rollcopy"></tbody>
 						</table>
 					</div>
 				</div>
