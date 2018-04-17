@@ -93,36 +93,22 @@
 						</div>
 					</div>
 				</div>
+				<!-- 精品教学视频  -->
 				<div class="recommend_three">
 					<p class="recommend_three_title">
 						<span>精品教学视频</span>
-						<a href="video.html" target="_blank">更多&gt;</a>
+						<a href="${pageContext.request.contextPath }/video.action" target="_blank">更多&gt;</a>
 					</p>
 					<div class="recommend_three_cnt">
+						<c:forEach items="${videoList }"  var="video">
 						<div>
-							<img src="img/home/sp_1.png"/>
-							<p>图层样式操作及应用</p>
-							<span><img src="img/home/TX.png" />1286人在学习</span>
-							<a href="video_details.html" target="_blank"></a>
+							<img src="http://localhost:8080/${video.v_cover} "/>
+							<p>${video.v_title}</p>
+							<span id="online"><img src="img/home/TX.png" />1286人在学习</span>
+							<a href="${pageContext.request.contextPath }/video/${video.v_id }.action" target="_blank"></a>
 						</div>
-						<div>
-							<img src="img/home/sp_2.png"/>
-							<p>图层样式操作及应用</p>
-							<span><img src="img/home/TX.png" />1286人在学习</span>
-							<a href="video_details.html" target="_blank"></a>
-						</div>
-						<div>
-							<img src="img/home/sp_3.png"/>
-							<p>图层样式操作及应用</p>
-							<span><img src="img/home/TX.png" />1286人在学习</span>
-							<a href="video_details.html" target="_blank"></a>
-						</div>
-						<div>
-							<img src="img/home/sp_4.png"/>
-							<p>图层样式操作及应用</p>
-							<span><img src="img/home/TX.png" />1286人在学习</span>
-							<a href="video_details.html target="_blank""></a>
-						</div>
+						</c:forEach>
+												
 					</div>
 				</div>
 				
