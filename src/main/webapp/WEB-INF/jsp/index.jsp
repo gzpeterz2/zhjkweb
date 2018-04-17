@@ -16,6 +16,7 @@
 		<script type="text/javascript" src="js/link-common.js" ></script>
 		<script type="text/javascript" src="js/home.js"></script>
 		<script type="text/javascript" src="js/studentlist.js"></script>
+		<script type="text/javascript" src="js/dynamiclist.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/home.css"/>
 		<link rel="stylesheet" type="text/css" href="css/base.css"/>
 	</head>
@@ -59,12 +60,12 @@
 								</a>
 							</div>
 							<div class="cnt_right">
-								<ul>
+								<ul id="inst_dynamic">							
+									<!-- <li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
 									<li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
 									<li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
 									<li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
-									<li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
-									<li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
+									<li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li> -->								
 								</ul>
 							</div>
 						</div>
@@ -82,12 +83,12 @@
 								</a>
 							</div>
 							<div class="cnt_right">
-								<ul>
+								<ul id="com_dynamic">
+									<!-- <li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
 									<li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
 									<li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
 									<li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
-									<li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
-									<li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
+									<li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li> -->
 								</ul>
 							</div>
 						</div>
