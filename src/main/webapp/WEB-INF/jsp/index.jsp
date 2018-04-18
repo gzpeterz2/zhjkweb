@@ -108,7 +108,7 @@
 					<div class="recommend_three_cnt">
 						<c:forEach items="${videoList }"  var="video">
 						<div>
-							<img src="http://localhost:8080/${video.v_cover} "/>
+							<img src="/${video.v_cover} "/>
 							<p>${video.v_title}</p>
 							<span id="online"><img src="img/home/TX.png" />1286人在学习</span>
 							<a href="${pageContext.request.contextPath }/video/${video.v_id }.action" target="_blank"></a>
