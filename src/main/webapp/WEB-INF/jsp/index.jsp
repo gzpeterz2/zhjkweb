@@ -59,12 +59,15 @@
 								</a>
 							</div>
 							<div class="cnt_right">
-								<ul>
+								<ul id="inst_dynamic">
+									<c:forEach items="${instDynamic }" var="inst">	
+										<li><a href="details.html" target="_blank">${inst.title }</a></li>					
+									<!-- <li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
 									<li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
 									<li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
 									<li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
-									<li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
-									<li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
+									<li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li> -->								
+									</c:forEach>	
 								</ul>
 							</div>
 						</div>
@@ -82,12 +85,15 @@
 								</a>
 							</div>
 							<div class="cnt_right">
-								<ul>
+								<ul id="com_dynamic">
+									<c:forEach items="${comDynamic }" var="com">
+										<li><a href="article.html" target="_blank">${com.title }</a></li>
+									<!-- <li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
 									<li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
 									<li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
 									<li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
-									<li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
-									<li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
+									<li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li> -->
+									</c:forEach>
 								</ul>
 							</div>
 						</div>
