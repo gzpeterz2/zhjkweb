@@ -14,6 +14,8 @@
 		<title>知海匠库</title>
 		<script type="text/javascript" src="js/jquery.min.js" ></script>
 		<script type="text/javascript" src="js/link-common.js" ></script>
+		<script type="text/javascript" src="js/home.js"></script>
+		<script type="text/javascript" src="js/studentlist.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/home.css"/>
 		<link rel="stylesheet" type="text/css" href="css/base.css"/>
 	</head>
@@ -57,12 +59,15 @@
 								</a>
 							</div>
 							<div class="cnt_right">
-								<ul>
+								<ul id="inst_dynamic">
+									<c:forEach items="${instDynamic }" var="inst">	
+										<li><a href="details.html" target="_blank">${inst.title }</a></li>					
+									<!-- <li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
 									<li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
 									<li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
 									<li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
-									<li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
-									<li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
+									<li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li> -->								
+									</c:forEach>	
 								</ul>
 							</div>
 						</div>
@@ -80,47 +85,36 @@
 								</a>
 							</div>
 							<div class="cnt_right">
-								<ul>
+								<ul id="com_dynamic">
+									<c:forEach items="${comDynamic }" var="com">
+										<li><a href="article.html" target="_blank">${com.title }</a></li>
+									<!-- <li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
 									<li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
 									<li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
 									<li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
-									<li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
-									<li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
+									<li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li> -->
+									</c:forEach>
 								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
+				<!-- 精品教学视频  -->
 				<div class="recommend_three">
 					<p class="recommend_three_title">
 						<span>精品教学视频</span>
-						<a href="video.html" target="_blank">更多&gt;</a>
+						<a href="${pageContext.request.contextPath }/video.action" target="_blank">更多&gt;</a>
 					</p>
 					<div class="recommend_three_cnt">
+						<c:forEach items="${videoList }"  var="video">
 						<div>
-							<img src="img/home/sp_1.png"/>
-							<p>图层样式操作及应用</p>
-							<span><img src="img/home/TX.png" />1286人在学习</span>
-							<a href="video_details.html" target="_blank"></a>
+							<img src="http://localhost:8080/${video.v_cover} "/>
+							<p>${video.v_title}</p>
+							<span id="online"><img src="img/home/TX.png" />1286人在学习</span>
+							<a href="${pageContext.request.contextPath }/video/${video.v_id }.action" target="_blank"></a>
 						</div>
-						<div>
-							<img src="img/home/sp_2.png"/>
-							<p>图层样式操作及应用</p>
-							<span><img src="img/home/TX.png" />1286人在学习</span>
-							<a href="video_details.html" target="_blank"></a>
-						</div>
-						<div>
-							<img src="img/home/sp_3.png"/>
-							<p>图层样式操作及应用</p>
-							<span><img src="img/home/TX.png" />1286人在学习</span>
-							<a href="video_details.html" target="_blank"></a>
-						</div>
-						<div>
-							<img src="img/home/sp_4.png"/>
-							<p>图层样式操作及应用</p>
-							<span><img src="img/home/TX.png" />1286人在学习</span>
-							<a href="video_details.html target="_blank""></a>
-						</div>
+						</c:forEach>
+												
 					</div>
 				</div>
 				
@@ -188,7 +182,7 @@
 					<h1 class="title">从这里出发 , BAT不再是梦</h1>
 					<p class="titles">独特1+3+0.5 开创互联网人才培养新模式、各大名企都有我们知海人的身影</p>
 					<div class="bat_img">
-						<img src="img/home/组17.png" alt="" />
+						<img src="img/home/pic17.png"/>
 						<div class="special_button">
 							<a href="JavaScript:;">了解更多关于他们的故事</a>
 							<span>了解更多关于他们的故事</span>
@@ -201,7 +195,7 @@
 				<div class="growth_cnt">
 					<h1 class="title">从<span>无到有</span> , 茁壮成长</h1>
 					<p class="titles">往届知海人都各自找到了自己满意的工作 , 现在的收入往往是以前所不敢想的<br />而这些 , 仅仅是他们的起点</p>
-					<div class="list">
+					<div class="list" id="rollCon">
 						<table>
 							<thead>
 								<tr>
@@ -212,85 +206,8 @@
 									<td class="zy">职业</td>
 								</tr>
 							</thead>
-							<tbody class="job_list">
-								<tr>
-									<td>李*华</td>
-									<td>本科</td>
-									<td>广州筷**科技</td>
-									<td>7000</td>
-									<td>UID设计</td>
-								</tr>
-								<tr>
-									<td>李*华</td>
-									<td>本科</td>
-									<td>广州筷**科技</td>
-									<td>7000</td>
-									<td>UID设计</td>
-								</tr>
-								<tr>
-									<td>李*华</td>
-									<td>本科</td>
-									<td>广州筷**科技</td>
-									<td>7000</td>
-									<td>UID设计</td>
-								</tr>
-								<tr>
-									<td>李*华</td>
-									<td>本科</td>
-									<td>广州筷**科技</td>
-									<td>7000</td>
-									<td>UID设计</td>
-								</tr>
-								<tr>
-									<td>李*华</td>
-									<td>本科</td>
-									<td>广州筷**科技</td>
-									<td>7000</td>
-									<td>UID设计</td>
-								</tr>
-								<tr>
-									<td>李*华</td>
-									<td>本科</td>
-									<td>广州筷**科技</td>
-									<td>7000</td>
-									<td>UID设计</td>
-								</tr>
-								<tr>
-									<td>李*华</td>
-									<td>本科</td>
-									<td>广州筷**科技</td>
-									<td>7000</td>
-									<td>UID设计</td>
-								</tr>
-								<tr>
-									<td>李*华</td>
-									<td>本科</td>
-									<td>广州筷**科技</td>
-									<td>7000</td>
-									<td>UID设计</td>
-								</tr>
-								<tr>
-									<td>李*华</td>
-									<td>本科</td>
-									<td>广州筷**科技</td>
-									<td>7000</td>
-									<td>UID设计</td>
-								</tr>
-								<tr>
-									<td>李*华</td>
-									<td>本科</td>
-									<td>广州筷**科技</td>
-									<td>7000</td>
-									<td>UID设计</td>
-								</tr>
-								<tr>
-									<td>李*华</td>
-									<td>本科</td>
-									<td>广州筷**科技</td>
-									<td>8000</td>
-									<td>UID设计</td>
-								</tr>
-							</tbody>
+							<tbody class="job_list" id="rollSubject"></tbody>
+							<tbody id="rollcopy"></tbody>
 						</table>
 					</div>
 				</div>
@@ -328,5 +245,4 @@
 			</div>
 		</div>
 	</body>
-	<script src="js/home.js"></script>
 </html>
