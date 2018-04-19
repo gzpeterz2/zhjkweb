@@ -18,6 +18,7 @@
      </bean>
      
      <bean id="jsonService" class="com.hc.web.service.impl.JsonServiceImpl"></bean>
-
+	 <bean id="instDynamicService" class="com.hc.web.service.impl.InstDynamicServiceImpl"></bean>
+	 <bean id="comDynamicService" class="com.hc.web.service.impl.ComDynamicServiceImpl"></bean>
     
 </beans>
