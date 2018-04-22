@@ -22,7 +22,7 @@ public class JsonController {
 	public @ResponseBody List<Succstudent> succstudentList() throws Exception {
 		List<Succstudent> list = jsonService.getSuccList();
 		for (Succstudent succstudent : list) {
-			System.out.println(succstudent);
+			//System.out.println(succstudent);
 		}
 		return list;
 	}

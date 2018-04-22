@@ -13,7 +13,16 @@ private Integer v_id;
 	private Integer v_isrecommend;
 	private String v_catelog;
 	private String v_cover;
+	public String getV_desc() {
+		return v_desc;
+	}
+
+	public void setV_desc(String v_desc) {
+		this.v_desc = v_desc;
+	}
+
 	private String v_describe;
+	private String v_desc;
 
 	public Video() {
 	}

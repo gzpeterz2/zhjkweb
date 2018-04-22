@@ -111,7 +111,7 @@
 							<img src="/${video.v_cover} "/>
 							<p>${video.v_title}</p>
 							<span id="online"><img src="img/home/TX.png" />1286人在学习</span>
-							<a href="${pageContext.request.contextPath }/video/${video.v_id }.action" target="_blank"></a>
+							<a href="${pageContext.request.contextPath }/video_${video.v_id }.action" target="_blank"></a>
 						</div>
 						</c:forEach>
 												
