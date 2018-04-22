@@ -34,12 +34,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				v_type = #{condition}
 			</if>
 		</where>
-		
 	</select>
 	
 	<select id="pageCountAll" resultType="Integer">
 		SELECT COUNT(1) FROM video
-				
 	</select>
 	
 

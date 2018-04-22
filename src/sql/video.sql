@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50522
 File Encoding         : 65001
 
-Date: 2018-04-22 13:36:36
+Date: 2018-04-22 22:55:34
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -30,8 +30,8 @@ CREATE TABLE `video` (
   `v_isrecommend` tinyint(1) DEFAULT NULL COMMENT '是否首页推荐',
   `v_catelog` varchar(32) DEFAULT NULL COMMENT '课程目录',
   `v_cover` varchar(100) DEFAULT NULL COMMENT '视频封面',
-  `v_describe` varchar(500) DEFAULT NULL COMMENT '视频详情',
-  `v_desc` varchar(200) DEFAULT NULL  COMMENT '视频简介',
+  `v_describe` varchar(500) DEFAULT NULL COMMENT '描述',
+  `v_desc` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`v_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 

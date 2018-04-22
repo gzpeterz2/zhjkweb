@@ -2,6 +2,8 @@ package com.hc.web.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,9 +24,13 @@ public class VideoController {
 	@Autowired
 	private PageQueryService pageQueryService;
 	
-	@RequestMapping("/{videoId}")
-	public String toVideoDesc(@PathVariable String videoId,Model model){
-		videoId = videoId.substring( videoId.lastIndexOf("_") + 1);
+	@RequestMapping("/video_*")
+	public String toVideoDesc(HttpServletRequest request,Model model){
+		StringBuffer requestURL = request.getRequestURL();
+		int begin = requestURL.lastIndexOf("_") + 1;
+		int end = requestURL.lastIndexOf(".action");
+		String videoId = requestURL.substring(begin, end);
+		System.out.println(videoId);
 		Integer vid = Integer.valueOf(videoId);
 		Video video = videoService.getVideoDescById(vid);
 		model.addAttribute("video",video);
@@ -47,7 +53,6 @@ public class VideoController {
 	
 	@RequestMapping("/videoPageQuery")
 	public String pageQuery(QueryVo vo,Model model){
-		System.out.println(vo);
 		PageBean<Video> pageBean = pageQueryService.pageQuery(vo);
 		model.addAttribute("pageBean", pageBean);
 		model.addAttribute("condition", vo.getCondition());

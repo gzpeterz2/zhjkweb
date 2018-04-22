@@ -75,7 +75,7 @@
 					<div class="community">
 						<p class="recommend_two_title">
 							<span>社区动态</span>
-							<a href="community_log.html">更多&gt;</a>
+							<a href="community.action">更多&gt;</a>
 						</p>
 						<div class="recommend_two_cnt">
 							<div class="cnt_left">
@@ -87,12 +87,7 @@
 							<div class="cnt_right">
 								<ul id="com_dynamic">
 									<c:forEach items="${comDynamic }" var="com">
-										<li><a href="article.html" target="_blank">${com.title }</a></li>
-									<!-- <li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
-									<li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
-									<li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
-									<li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
-									<li><a href="article.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li> -->
+										<li><a href="${pageContext.request.contextPath }/article_${com.id }.action" target="_blank">${com.title }</a></li>
 									</c:forEach>
 								</ul>
 							</div>

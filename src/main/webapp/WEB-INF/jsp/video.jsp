@@ -49,64 +49,74 @@
 
 				</c:forEach>
 
-				
+
 
 			</ul>
 		</div>
 
 		<script type="text/javascript">
-			$(function(){
+			$(function() {
 				var types = $("#types li");
-				types.each(function(i){
-					if (i == 0 ) {
-						$(this).click(function(){
-							location="videoPageQuery.action?pageCode=1&condition=";
+				types
+						.each(function(i) {
+							if (i == 0) {
+								$(this)
+										.click(
+												function() {
+													location = "videoPageQuery.action?pageCode=1&condition=";
+												})
+							} else if (i == 1) {
+								$(this)
+										.click(
+												function() {
+													location = "videoPageQuery.action?pageCode=1&condition=UI";
+												})
+							} else if (i == 2) {
+								$(this)
+										.click(
+												function() {
+													location = "videoPageQuery.action?pageCode=1&condition=WEB";
+												})
+							} else if (i == 3) {
+								$(this)
+										.click(
+												function() {
+													location = "videoPageQuery.action?pageCode=1&condition=JAVA";
+												})
+							}
+
 						})
-					} else if(i == 1) {
-						$(this).click(function(){
-							location="videoPageQuery.action?pageCode=1&condition=UI";
-						})
-					}else if(i == 2) {
-						$(this).click(function(){
-							location="videoPageQuery.action?pageCode=1&condition=WEB";
-						})
-					}else if(i == 3) {
-						$(this).click(function(){
-							location="videoPageQuery.action?pageCode=1&condition=JAVA";
-						})
-					}
-					
-				})
-				
+
 			})
-			
-		
 		</script>
-				
+
 		<div class="pages">
-				<ul>
-					<li><a href="videoPageQuery.action?pageCode=1&condition=${condition }">首页</a></li>
-					<c:if test="${pageBean.pageCode!=1 }">
-						<li><a href="videoPageQuery.action?pageCode=${pageBean.pageCode-1 }&condition=${condition }"><</a></li>
-					</c:if>
-					<c:forEach begin="1" end="${pageBean.totalPage }" var="i" >
-						<c:choose>
-							<c:when test="${i==pageBean.pageCode }">
-								<li class="current"><a>${i }</a></li>
-							</c:when>
-							<c:otherwise>
-								<li><a href="videoPageQuery.action?pageCode=${i }&condition=${condition }">${i }</a></li>
-							</c:otherwise>
-						</c:choose>
-					</c:forEach>
-					<c:if test="${pageBean.pageCode!=pageBean.totalPage }">
-						<li><a href="videoPageQuery.action?pageCode=${pageBean.pageCode + 1 }&condition=${condition }">></a></li>
-					</c:if>
-					<li><a href="videoPageQuery.action?pageCode=${pageBean.totalPage }&condition=${condition }">尾页</a></li>
-				</ul>
-			</div>
-
-
+			<ul>
+				<li><a
+					href="videoPageQuery.action?pageCode=1&condition=${condition }">首页</a></li>
+				<c:if test="${pageBean.pageCode!=1 }">
+					<li><a
+						href="videoPageQuery.action?pageCode=${pageBean.pageCode-1 }&condition=${condition }"><</a></li>
+				</c:if>
+				<c:forEach begin="1" end="${pageBean.totalPage }" var="i">
+					<c:choose>
+						<c:when test="${i==pageBean.pageCode }">
+							<li class="current"><a>${i }</a></li>
+						</c:when>
+						<c:otherwise>
+							<li><a
+								href="videoPageQuery.action?pageCode=${i }&condition=${condition }">${i }</a></li>
+						</c:otherwise>
+					</c:choose>
+				</c:forEach>
+				<c:if test="${pageBean.pageCode!=pageBean.totalPage }">
+					<li><a
+						href="videoPageQuery.action?pageCode=${pageBean.pageCode + 1 }&condition=${condition }">></a></li>
+				</c:if>
+				<li><a
+					href="videoPageQuery.action?pageCode=${pageBean.totalPage }&condition=${condition }">尾页</a></li>
+			</ul>
+		</div>
 	</div>
 
 
