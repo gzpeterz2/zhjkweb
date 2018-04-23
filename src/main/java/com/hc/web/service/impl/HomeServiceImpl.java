@@ -4,6 +4,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
 
 import com.hc.web.mapper.BannerMapper;
@@ -24,6 +26,7 @@ public class HomeServiceImpl implements HomeService {
 
 	@Override
 	public HomePage getHomePage() throws SQLException {
+		
 		HomePage homePage = new HomePage();
 		List<Banner> list = bannerMapper.selectByLocation("HomePage");
 		homePage.setBigBanner1(list.get(0));

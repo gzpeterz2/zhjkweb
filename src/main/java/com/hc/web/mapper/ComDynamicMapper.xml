@@ -1,120 +1,194 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.hc.web.mapper.ComDynamicMapper" >
-  <resultMap id="BaseResultMap" type="com.hc.web.po.ComDynamic" >
-    <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="title" property="title" jdbcType="VARCHAR" />
-    <result column="author" property="author" jdbcType="VARCHAR" />
-    <result column="post_time" property="postTime" jdbcType="VARCHAR" />
-    <result column="views" property="views" jdbcType="INTEGER" />
-    <result column="comments" property="comments" jdbcType="INTEGER" />
-    <result column="thumbups" property="thumbups" jdbcType="INTEGER" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    id, title, author, post_time, views, comments, thumbups
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from com_dynamic
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <select id="findByPage" resultMap="BaseResultMap">
-  	select * from com_dynamic limit 0,5
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from com_dynamic
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.hc.web.po.ComDynamic" >
-    insert into com_dynamic (id, title, author, 
-      post_time, views, comments, 
-      thumbups)
-    values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{author,jdbcType=VARCHAR}, 
-      #{postTime,jdbcType=VARCHAR}, #{views,jdbcType=INTEGER}, #{comments,jdbcType=INTEGER}, 
-      #{thumbups,jdbcType=INTEGER})
-  </insert>
-  <insert id="insertSelective" parameterType="com.hc.web.po.ComDynamic" >
-    insert into com_dynamic
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
-      </if>
-      <if test="title != null" >
-        title,
-      </if>
-      <if test="author != null" >
-        author,
-      </if>
-      <if test="postTime != null" >
-        post_time,
-      </if>
-      <if test="views != null" >
-        views,
-      </if>
-      <if test="comments != null" >
-        comments,
-      </if>
-      <if test="thumbups != null" >
-        thumbups,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="title != null" >
-        #{title,jdbcType=VARCHAR},
-      </if>
-      <if test="author != null" >
-        #{author,jdbcType=VARCHAR},
-      </if>
-      <if test="postTime != null" >
-        #{postTime,jdbcType=VARCHAR},
-      </if>
-      <if test="views != null" >
-        #{views,jdbcType=INTEGER},
-      </if>
-      <if test="comments != null" >
-        #{comments,jdbcType=INTEGER},
-      </if>
-      <if test="thumbups != null" >
-        #{thumbups,jdbcType=INTEGER},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.hc.web.po.ComDynamic" >
-    update com_dynamic
-    <set >
-      <if test="title != null" >
-        title = #{title,jdbcType=VARCHAR},
-      </if>
-      <if test="author != null" >
-        author = #{author,jdbcType=VARCHAR},
-      </if>
-      <if test="postTime != null" >
-        post_time = #{postTime,jdbcType=VARCHAR},
-      </if>
-      <if test="views != null" >
-        views = #{views,jdbcType=INTEGER},
-      </if>
-      <if test="comments != null" >
-        comments = #{comments,jdbcType=INTEGER},
-      </if>
-      <if test="thumbups != null" >
-        thumbups = #{thumbups,jdbcType=INTEGER},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.hc.web.po.ComDynamic" >
-    update com_dynamic
-    set title = #{title,jdbcType=VARCHAR},
-      author = #{author,jdbcType=VARCHAR},
-      post_time = #{postTime,jdbcType=VARCHAR},
-      views = #{views,jdbcType=INTEGER},
-      comments = #{comments,jdbcType=INTEGER},
-      thumbups = #{thumbups,jdbcType=INTEGER}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
+<mapper namespace="com.hc.web.mapper.ComDynamicMapper">
+	<resultMap id="BaseResultMap" type="com.hc.web.po.ComDynamic">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="title" property="title" jdbcType="VARCHAR" />
+		<result column="author" property="author" jdbcType="VARCHAR" />
+		<result column="post_time" property="postTime" jdbcType="VARCHAR" />
+		<result column="views" property="views" jdbcType="INTEGER" />
+		<result column="comments" property="comments" jdbcType="INTEGER" />
+		<result column="thumbups" property="thumbups" jdbcType="INTEGER" />
+	</resultMap>
+	<!-- 表字段扩容:type,cover,top,original,editor,edit_time,content  by 欧阳亮  2018.4.22  -->
+	<sql id="Base_Column_List">
+		id, title, author, post_time, views, comments, thumbups,type,cover,top,original,editor,edit_time,content
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from com_dynamic
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<select id="findByPage" resultMap="BaseResultMap">
+		select * from com_dynamic limit 0,5
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from com_dynamic
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.hc.web.po.ComDynamic">
+		insert into com_dynamic (id, title, author,
+		post_time, views, comments,
+		thumbups)
+		values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR},
+		#{author,jdbcType=VARCHAR},
+		#{postTime,jdbcType=VARCHAR}, #{views,jdbcType=INTEGER}, #{comments,jdbcType=INTEGER},
+		#{thumbups,jdbcType=INTEGER})
+	</insert>
+	<insert id="insertSelective" parameterType="com.hc.web.po.ComDynamic">
+		insert into com_dynamic
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="title != null">
+				title,
+			</if>
+			<if test="author != null">
+				author,
+			</if>
+			<if test="postTime != null">
+				post_time,
+			</if>
+			<if test="views != null">
+				views,
+			</if>
+			<if test="comments != null">
+				comments,
+			</if>
+			<if test="thumbups != null">
+				thumbups,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="title != null">
+				#{title,jdbcType=VARCHAR},
+			</if>
+			<if test="author != null">
+				#{author,jdbcType=VARCHAR},
+			</if>
+			<if test="postTime != null">
+				#{postTime,jdbcType=VARCHAR},
+			</if>
+			<if test="views != null">
+				#{views,jdbcType=INTEGER},
+			</if>
+			<if test="comments != null">
+				#{comments,jdbcType=INTEGER},
+			</if>
+			<if test="thumbups != null">
+				#{thumbups,jdbcType=INTEGER},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.hc.web.po.ComDynamic">
+		update com_dynamic
+		<set>
+			<if test="title != null">
+				title = #{title,jdbcType=VARCHAR},
+			</if>
+			<if test="author != null">
+				author = #{author,jdbcType=VARCHAR},
+			</if>
+			<if test="postTime != null">
+				post_time = #{postTime,jdbcType=VARCHAR},
+			</if>
+			<if test="views != null">
+				views = #{views,jdbcType=INTEGER},
+			</if>
+			<if test="comments != null">
+				comments = #{comments,jdbcType=INTEGER},
+			</if>
+			<if test="thumbups != null">
+				thumbups = #{thumbups,jdbcType=INTEGER},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.hc.web.po.ComDynamic">
+		update com_dynamic
+		set title = #{title,jdbcType=VARCHAR},
+		author = #{author,jdbcType=VARCHAR},
+		post_time = #{postTime,jdbcType=VARCHAR},
+		views = #{views,jdbcType=INTEGER},
+		comments = #{comments,jdbcType=INTEGER},
+		thumbups = #{thumbups,jdbcType=INTEGER}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	
+
+<!-- 欧阳亮添加部分 -->
+	<select id="getPostList" resultMap="BaseResultMap" resultType="ComDynamic">
+		SELECT * FROM com_dynamic ORDER BY top DESC LIMIT 8
+	</select>
+
+	<select id="getTotalCount" resultType="Integer">
+		SELECT COUNT(1) FROM com_dynamic
+	</select>
+
+	<select id="pageQuery" resultMap="BaseResultMap" parameterType="QueryVo" resultType="ComDynamic">
+		SELECT * FROM com_dynamic
+		<where>
+			<if test="condition != null and condition != ''">
+				type = #{condition}
+			</if>
+		</where>
+		ORDER BY top DESC
+		LIMIT #{startRow},#{pageSize}
+	</select>
+	
+	<select id="originalPageQuery" resultMap="BaseResultMap" parameterType="QueryVo" resultType="ComDynamic">
+		SELECT * FROM com_dynamic
+		<where>
+			<if test="condition != null and condition != ''">
+				original = 1
+			</if>
+		</where>
+		ORDER BY top DESC
+		LIMIT #{startRow},#{pageSize}
+	</select>
+	
+	<select id="lastPageQuery" resultMap="BaseResultMap" parameterType="QueryVo" resultType="ComDynamic">
+		SELECT * FROM com_dynamic		
+		ORDER BY top,post_time DESC
+		LIMIT #{startRow},#{pageSize}
+	</select>
+
+	<select id="pageCount" parameterType="QueryVo" resultType="Integer">
+		SELECT COUNT(1) FROM com_dynamic
+		<where>
+			<if test="condition != null and condition != ''">
+				type = #{condition}
+			</if>
+		</where>
+	</select>
+	
+	<select id="originalPageCount" parameterType="QueryVo" resultType="Integer">
+		SELECT COUNT(1) FROM com_dynamic
+		<where>
+			<if test="condition != null and condition != ''">
+				original = 1
+			</if>
+		</where>
+	</select>
+	
+	<select id="lastPageCount" parameterType="QueryVo" resultType="Integer">
+		SELECT COUNT(1) FROM com_dynamic
+	</select>
+	<update id="incrViewsById" parameterType="Integer">
+		UPDATE com_dynamic
+		SET	views = views+1
+		WHERE id = #{id}
+	</update>
+	
+<!-- 欧阳亮添加部分   止   -->
+
+
+
+
 </mapper>

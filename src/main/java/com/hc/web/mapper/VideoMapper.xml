@@ -8,5 +8,37 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getVideo" resultType="Video">
 		SELECT * FROM video WHERE  v_isrecommend='1' LIMIT 4
 	</select>
+	
+	<select id="getVideoDescById" parameterType="Integer" resultType="Video">
+		SELECT * FROM video WHERE  v_id = #{v}
+	</select>
+	
+	<select id="getVideoList" resultType="Video">
+		SELECT * FROM video LIMIT 12
+	</select>
+	
+	<select id="pageQuery" parameterType="QueryVo" resultType="Video">
+		SELECT * FROM video
+		<where>
+			<if test="condition != null and condition != ''">
+				v_type = #{condition}
+			</if>
+		</where>
+		LIMIT #{startRow},#{pageSize}
+	</select>
+	
+	<select id="pageCount" parameterType="QueryVo" resultType="Integer">
+		SELECT COUNT(1) FROM video
+		<where>
+			<if test="condition != null and condition != ''">
+				v_type = #{condition}
+			</if>
+		</where>
+	</select>
+	
+	<select id="pageCountAll" resultType="Integer">
+		SELECT COUNT(1) FROM video
+	</select>
+	
 
 </mapper>
