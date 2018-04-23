@@ -25,6 +25,18 @@ $(function(){
 	var userpassword=123456;//正确的密码
 	$(".user_bnt_login").click(function(){
 		
+		$.post("login.action",$("#loginform").serialize(),function(data){
+			
+			
+			
+		});
+		
+		
+		
+		
+		
+		
+		/*
 		if($(".user_name>input").val()==username && $(".user_password>input").val()==userpassword){
 			$(".user_name").addClass("border-color1");
 			$(".user_name>span").addClass("border-color1");
@@ -58,7 +70,7 @@ $(function(){
 				$(".tishi").css("display","none")
 			},3000);
 		}
-		
+		*/
 		
 		
 	});

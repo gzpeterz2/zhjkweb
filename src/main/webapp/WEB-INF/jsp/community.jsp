@@ -143,7 +143,7 @@
 			</div>
 			<div class="c_right">
 				<div class="theme">
-					发表新主题<a href="article.html"></a>
+					发表新主题<a href="keynote.action"></a>
 				</div>
 				<div class="data">
 					<p class="years">2017年07月</p>

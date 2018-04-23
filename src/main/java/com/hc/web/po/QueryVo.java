@@ -1,5 +1,11 @@
 package com.hc.web.po;
 
+
+
+/**
+ * 分页查询pojo
+ * @author 欧阳亮
+ */
 public class QueryVo {
 	
 	//客户名称
