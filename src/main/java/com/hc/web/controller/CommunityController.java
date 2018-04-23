@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.hc.web.po.ComDynamic;
+import com.hc.web.po.Comment;
 import com.hc.web.po.QueryVo;
 import com.hc.web.po.Video;
 import com.hc.web.service.CommunityService;
@@ -21,7 +23,7 @@ import com.hc.web.util.PageBean;
 
 /**
  * 知海社区
- * @author oyl
+ * @author 欧阳亮
  */
 @Controller
 public class CommunityController {
@@ -57,17 +59,24 @@ public class CommunityController {
 	}
 	
 	@RequestMapping("/article_*")
-	public String toArticle(HttpServletRequest request,Model model){
+	public String toArticle(HttpServletRequest request,Model model,QueryVo vo){
 		StringBuffer requestURL = request.getRequestURL();
 		int begin = requestURL.lastIndexOf("_") + 1;
 		int end = requestURL.lastIndexOf(".action");
 		String articleId = requestURL.substring(begin, end);
 		Integer aid = Integer.valueOf(articleId);
 		ComDynamic article = communityService.getArticleById(aid);
+		if (StringUtils.isBlank(vo.getCondition())) {
+			vo.setCondition(aid.toString());
+		}
+		PageBean<Comment> comment = pageQueryService.commentPageQuery(vo);
 		model.addAttribute("article",article);
-		
+		model.addAttribute("pageBean", comment);
 		return "article";
 	}
+	
+	
+	
 	
 	
 }

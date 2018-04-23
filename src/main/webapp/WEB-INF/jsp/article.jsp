@@ -21,23 +21,28 @@
 	<div class="mian">
 		<div class="content">
 			<p class="tit">
-				<a href="index.action">知海匠库</a>&gt; <a href="postPageQuery.action?pageCode=1&condition=">全部板块</a>&gt;
-				<c:if test="${article.type == '最新活动' }"><a href="postPageQuery.action?pageCode=1&condition=new">${article.type }</a>&gt;</c:if>
-				<c:if test="${article.type == '资源分享' }"><a href="postPageQuery.action?pageCode=1&condition=resource">${article.type }</a>&gt;</c:if>
-				<c:if test="${article.type == '技术交流' }"><a href="postPageQuery.action?pageCode=1&condition=technology">${article.type }</a>&gt;</c:if>
+				<a href="index.action">知海匠库</a>&gt; <a
+					href="postPageQuery.action?pageCode=1&condition=">全部板块</a>&gt;
+				<c:if test="${article.type == '最新活动' }">
+					<a href="postPageQuery.action?pageCode=1&condition=new">${article.type }</a>&gt;</c:if>
+				<c:if test="${article.type == '资源分享' }">
+					<a href="postPageQuery.action?pageCode=1&condition=resource">${article.type }</a>&gt;</c:if>
+				<c:if test="${article.type == '技术交流' }">
+					<a href="postPageQuery.action?pageCode=1&condition=technology">${article.type }</a>&gt;</c:if>
 				<a href="#">查看内容</a>
 			</p>
 			<div class="article_left">
 				<div class="article_left_content">
 					<div class="al_header">
-						<h1 class="al_title"><span>【${article.type }】</span>${article.title }</h1>
+						<h1 class="al_title">
+							<span>【${article.type }】</span>${article.title }</h1>
 						<div class="al_titles">
 							<span class="times">${article.author } 发表于<time>${article.postTime }</time></span>
 							<p>
 								<span><img src="img/article/yj.png" align="center" />${article.views }</span>
 								<span><img src="img/article/hf.png" align="center" />
-									126</span> <span><img src="img/article/zan.png" align="center" />
-									288</span>
+									${pageBean.totalCount }</span> <span><img src="img/article/zan.png" align="center" />
+									${article.thumbups }</span>
 							</p>
 						</div>
 					</div>
@@ -47,12 +52,11 @@
 							<time>${article.edit_time }</time>
 							编辑
 						</h3>
-						<ul class="editor_cnt">
-							${article.content }
+						<ul class="editor_cnt">${article.content }
 						</ul>
 						<div class="praise">
 							<a href="#"> <img src="img/article/preview_like_icon.png" />赞
-							</a> <span>320</span>
+							</a> <span>${article.thumbups }</span>
 							<div>+1</div>
 						</div>
 					</div>
@@ -75,126 +79,63 @@
 				</div>
 				<div class="reply_list">
 					<p class="reply_title">
-						<span>39</span>个回复
+						<span>${pageBean.totalCount }</span>个回复
 					</p>
 					<hr class="b_line" />
 					<ul class="reply_cnt">
-						<li class="reply_cnt_user"><img src="img/article/zzzz.png"
+						<c:forEach items="${pageBean.beanList }" var="subcomment">
+							<li class="reply_cnt_user"><img src="${subcomment.webUser.u_head }"
 							class="hftx" />
 							<div class="hf_cnt">
 								<p class="user_cnt">
-									<span class="name">安东旭</span> <span class="level">初级潜水员</span>
-									<span class="announce">发表于<time>2016-11-17
-											00:52:48</time></span>
+									<span class="name">${subcomment.webUser.u_name }</span> <span class="level">
+									<c:if test="${subcomment.webUser.u_level <= 10}">初学乍练</c:if>
+									<c:if test="${subcomment.webUser.u_level > 10 && subcomment.webUser.u_level <= 30}">初窥门径</c:if>
+									<c:if test="${subcomment.webUser.u_level > 30 && subcomment.webUser.u_level <= 60}">已有小成</c:if>
+									<c:if test="${subcomment.webUser.u_level > 60 && subcomment.webUser.u_level <= 100}">少年壮志</c:if>
+									<c:if test="${subcomment.webUser.u_level > 100 && subcomment.webUser.u_level <= 140}">少年剑客</c:if>
+									<c:if test="${subcomment.webUser.u_level > 140 && subcomment.webUser.u_level <= 200}">武林浪人</c:if>
+									<c:if test="${subcomment.webUser.u_level > 200 && subcomment.webUser.u_level <= 300}">武林侠客</c:if>
+									<c:if test="${subcomment.webUser.u_level > 300 && subcomment.webUser.u_level <= 400}">仗剑天涯</c:if>
+									<c:if test="${subcomment.webUser.u_level > 400 && subcomment.webUser.u_level <= 650}">武林争雄</c:if>
+									<c:if test="${subcomment.webUser.u_level > 650 && subcomment.webUser.u_level <= 1000}">武林霸主</c:if>
+									<c:if test="${subcomment.webUser.u_level > 1000}">一代宗师</c:if>
+									</span>
+									<span class="announce">发表于<time>${subcomment.c_time }</time></span>
 								</p>
-								<div class="hf_text">希望多学点东西，尽快找到工作!</div>
+								<div class="hf_text">${subcomment.c_content }</div>
 								<p class="review">
-									<span class="zan_user">0</span> <span class="hf_user">回复</span>
+									<span class="zan_user">${subcomment.c_thumbups }</span>
 								</p>
 							</div></li>
-						<li class="reply_cnt_user"><img src="img/article/zzzz.png"
-							class="hftx" />
-							<div class="hf_cnt">
-								<p class="user_cnt">
-									<span class="name">安东旭</span> <span class="level">初级潜水员</span>
-									<span class="announce">发表于<time>2016-11-17
-											00:52:48</time></span>
-								</p>
-								<div class="hf_text">希望多学点东西，尽快找到工作!</div>
-								<p class="review">
-									<span class="zan_user">0</span> <span class="hf_user">回复</span>
-								</p>
-							</div></li>
-						<li class="reply_cnt_user"><img src="img/article/zzzz.png"
-							class="hftx" />
-							<div class="hf_cnt">
-								<p class="user_cnt">
-									<span class="name">安东旭</span> <span class="level">初级潜水员</span>
-									<span class="announce">发表于<time>2016-11-17
-											00:52:48</time></span>
-								</p>
-								<div class="hf_text">希望多学点东西，尽快找到工作!</div>
-								<p class="review">
-									<span class="zan_user">0</span> <span class="hf_user">回复</span>
-								</p>
-							</div></li>
-						<li class="reply_cnt_user"><img src="img/article/zzzz.png"
-							class="hftx" />
-							<div class="hf_cnt">
-								<p class="user_cnt">
-									<span class="name">安东旭</span> <span class="level">初级潜水员</span>
-									<span class="announce">发表于<time>2016-11-17
-											00:52:48</time></span>
-								</p>
-								<div class="hf_text">希望多学点东西，尽快找到工作!</div>
-								<p class="review">
-									<span class="zan_user">0</span> <span class="hf_user">回复</span>
-								</p>
-							</div></li>
-						<li class="reply_cnt_user"><img src="img/article/zzzz.png"
-							class="hftx" />
-							<div class="hf_cnt">
-								<p class="user_cnt">
-									<span class="name">安东旭</span> <span class="level">初级潜水员</span>
-									<span class="announce">发表于<time>2016-11-17
-											00:52:48</time></span>
-								</p>
-								<div class="hf_text">希望多学点东西，尽快找到工作!</div>
-								<p class="review">
-									<span class="zan_user">0</span> <span class="hf_user">回复</span>
-								</p>
-							</div></li>
-						<li class="reply_cnt_user"><img src="img/article/zzzz.png"
-							class="hftx" />
-							<div class="hf_cnt">
-								<p class="user_cnt">
-									<span class="name">安东旭</span> <span class="level">初级潜水员</span>
-									<span class="announce">发表于<time>2016-11-17
-											00:52:48</time></span>
-								</p>
-								<div class="hf_text">希望多学点东西，尽快找到工作!</div>
-								<p class="review">
-									<span class="zan_user">0</span> <span class="hf_user">回复</span>
-								</p>
-							</div></li>
-						<li class="reply_cnt_user"><img src="img/article/zzzz.png"
-							class="hftx" />
-							<div class="hf_cnt">
-								<p class="user_cnt">
-									<span class="name">安东旭</span> <span class="level">初级潜水员</span>
-									<span class="announce">发表于<time>2016-11-17
-											00:52:48</time></span>
-								</p>
-								<div class="hf_text">希望多学点东西，尽快找到工作!</div>
-								<p class="review">
-									<span class="zan_user">0</span> <span class="hf_user">回复</span>
-								</p>
-							</div></li>
-						<li class="reply_cnt_user"><img src="img/article/zzzz.png"
-							class="hftx" />
-							<div class="hf_cnt">
-								<p class="user_cnt">
-									<span class="name">安东旭</span> <span class="level">初级潜水员</span>
-									<span class="announce">发表于<time>2016-11-17
-											00:52:48</time></span>
-								</p>
-								<div class="hf_text">希望多学点东西，尽快找到工作!</div>
-								<p class="review">
-									<span class="zan_user">0</span> <span class="hf_user">回复</span>
-								</p>
-							</div></li>
+						</c:forEach>
 
 					</ul>
 					<div class="pages">
 						<ul>
-							<li><a href="#">首页</a></li>
-							<li><a href="#"><</a></li>
-							<li class="current"><a href="#">1</a></li>
-							<li><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">···</a></li>
-							<li><a href="#">></a></li>
-							<li><a href="#">尾页</a></li>
+							<li><a
+								href="article_${article.id }.action?pageCode=1&condition=${article.id }">首页</a></li>
+							<c:if test="${pageBean.pageCode!=1 }">
+								<li><a
+									href="article_${article.id }.action?pageCode=${pageBean.pageCode-1 }&condition=${article.id  }"><</a></li>
+							</c:if>
+							<c:forEach begin="1" end="${pageBean.totalPage }" var="i">
+								<c:choose>
+									<c:when test="${i==pageBean.pageCode }">
+										<li class="current"><a>${i }</a></li>
+									</c:when>
+									<c:otherwise>
+										<li><a
+											href="article_${article.id }.action?pageCode=${i }&condition=${article.id }">${i }</a></li>
+									</c:otherwise>
+								</c:choose>
+							</c:forEach>
+							<c:if test="${pageBean.pageCode!=pageBean.totalPage }">
+								<li><a
+									href="article_${article.id }.action?pageCode=${pageBean.pageCode + 1 }&condition=${article.id }">></a></li>
+							</c:if>
+							<li><a
+								href="article_${article.id }.action?pageCode=${pageBean.totalPage }&condition=${article.id }">尾页</a></li>
 						</ul>
 					</div>
 				</div>
@@ -222,7 +163,7 @@
 
 			<div class="c_right mrtop">
 				<div class="theme">
-					发表新主题<a href="keynote.html"></a>
+					发表新主题<a href="keynote.action"></a>
 				</div>
 				<div class="data">
 					<p class="years">2017年07月</p>

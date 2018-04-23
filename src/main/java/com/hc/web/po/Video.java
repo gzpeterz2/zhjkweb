@@ -1,5 +1,12 @@
 package com.hc.web.po;
 
+
+/**
+ * 视频pojo
+ * @author 欧阳亮
+ */
+
+
 public class Video {
 
 

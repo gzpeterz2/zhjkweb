@@ -10,6 +10,13 @@ import com.hc.web.mapper.ComDynamicMapper;
 import com.hc.web.po.ComDynamic;
 import com.hc.web.service.CommunityService;
 
+
+/**
+ * 
+ * 知海社区
+ * @author 欧阳亮
+ */
+
 @Service
 @Transactional
 public class CommunityServiceImpl implements CommunityService {

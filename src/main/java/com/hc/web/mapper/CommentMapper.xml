@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hc.web.mapper.CommentMapper">
+	
+	<select id="commentPageQuery" parameterType="QueryVo" resultType="Comment">
+		SELECT *
+		FROM `comment`
+		WHERE c_articleid = #{condition}
+		LIMIT #{startRow},#{pageSize}
+	</select>
+	
+	<select id="commnetTotalCount" parameterType="QueryVo" resultType="Integer">
+		SELECT COUNT(1)
+		FROM `comment`
+		WHERE c_articleid = #{condition}
+	</select>
+	
+
+</mapper>

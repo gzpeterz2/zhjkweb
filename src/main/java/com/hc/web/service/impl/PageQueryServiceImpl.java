@@ -8,12 +8,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hc.web.mapper.ComDynamicMapper;
+import com.hc.web.mapper.CommentMapper;
 import com.hc.web.mapper.VideoMapper;
+import com.hc.web.mapper.WebUserMapper;
 import com.hc.web.po.ComDynamic;
+import com.hc.web.po.Comment;
 import com.hc.web.po.QueryVo;
 import com.hc.web.po.Video;
+import com.hc.web.po.WebUser;
 import com.hc.web.service.PageQueryService;
 import com.hc.web.util.PageBean;
+
+
+/**
+ * 分页查询 
+ * @author 欧阳亮
+ *
+ * */
 
 @Service
 public class PageQueryServiceImpl implements PageQueryService {
@@ -74,6 +85,41 @@ public class PageQueryServiceImpl implements PageQueryService {
 		pageBean.setBeanList(postList);
 		pageBean.setTotalCount(totalCount);
 		pageBean.setPageCode(pageCode);
+		return pageBean;
+	}
+
+	@Autowired
+	private CommentMapper commentMapper;
+	@Autowired
+	private WebUserMapper webUserMapper;
+	
+	@Override
+	public PageBean<Comment> commentPageQuery(QueryVo vo) {
+		
+		vo.setPageSize(8);
+		Integer pageCode = vo.getPageCode();
+		if (pageCode == null || pageCode == 0 ) {
+			vo.setPageCode(1);
+			vo.setStartRow(0);
+			pageCode = 1;
+		}
+		
+		vo.setStartRow((pageCode - 1)*vo.getPageSize());
+		
+		PageBean<Comment> pageBean = new PageBean<>();
+		List<Comment> commentList = commentMapper.commentPageQuery(vo);
+		
+		for (Comment comment : commentList) {
+			WebUser webUser = webUserMapper.getUserById(comment.getC_uid());
+			comment.setWebUser(webUser);
+		}
+		
+		Integer totalCount = commentMapper.commnetTotalCount(vo);
+		pageBean.setBeanList(commentList);
+		pageBean.setPageCode(vo.getPageCode());
+		pageBean.setPageSize(vo.getPageSize());
+		pageBean.setTotalCount(totalCount);
+		
 		return pageBean;
 	}
 

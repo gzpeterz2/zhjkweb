@@ -79,9 +79,9 @@
 						</p>
 						<div class="recommend_two_cnt">
 							<div class="cnt_left">
-								<a href="article.html">
+								<a href="community.action">
 									<img src="img/home/dt_2.png"/>
-									<p>知海匠库互联网学院再添分校</p>
+									<p>欢迎来到知海社区</p>
 								</a>
 							</div>
 							<div class="cnt_right">

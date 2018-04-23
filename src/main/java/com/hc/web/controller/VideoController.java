@@ -17,6 +17,10 @@ import com.hc.web.service.PageQueryService;
 import com.hc.web.service.VideoService;
 import com.hc.web.util.PageBean;
 
+/**
+ * 视频
+ * @author 欧阳亮
+ */
 @Controller
 public class VideoController {
 	@Autowired

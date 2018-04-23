@@ -9,6 +9,10 @@ import com.hc.web.mapper.VideoMapper;
 import com.hc.web.po.Video;
 import com.hc.web.service.VideoService;
 
+/**
+ * 视频页
+ * @author 欧阳亮
+ */
 
 @Service
 public class VideoServiceImpl implements VideoService{
