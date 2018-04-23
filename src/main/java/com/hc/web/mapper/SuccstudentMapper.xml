@@ -5,8 +5,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.hc.web.mapper.SuccstudentMapper">
 	
+	<!-- 查询所有学员信息 -->
 	<select id="selectAll"  resultType="succstudent">
 		select * from succstudent  order by id;
 	</select>
-
+	<!-- 分页查询学员信息 -->
+	<select id="selectByPage" parameterType="com.hc.web.util.QueryVo" resultType="succstudent">
+		select * from succstudent limit #{beginIndex},#{pageSize}
+	</select>
+	<!-- 查询总记录数 -->
+	<select id="selectCount" resultType="int">
+		select count(*) from succstudent
+	</select>
 </mapper>

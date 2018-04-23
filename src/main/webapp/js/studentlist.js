@@ -1,6 +1,6 @@
 $(function(){
 	
-	showStudentList();
+//	showStudentList();
 /*	//学生列表ajax数据获取
 	var succstudent=$.ajax({url:"http://localhost/zhjkweb/json/succstudent.action",type:"GET",async:false});
 	succstudent=succstudent.responseJSON;

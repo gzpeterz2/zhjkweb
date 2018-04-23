@@ -3,17 +3,24 @@ package com.hc.web.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hc.web.mapper.ComDynamicMapper;
 import com.hc.web.mapper.InstDynamicMapper;
+import com.hc.web.po.ChatPrintscreen;
 import com.hc.web.po.HomePage;
+import com.hc.web.po.Succstudent;
 import com.hc.web.po.Video;
+import com.hc.web.service.ChatPrintscreenService;
 import com.hc.web.service.ComDynamicService;
 import com.hc.web.service.HomeService;
 import com.hc.web.service.InstDynamicService;
+import com.hc.web.service.SuccstudentService;
+import com.hc.web.util.PageBean;
 
 @Controller
 public class HomeController {
@@ -24,7 +31,15 @@ public class HomeController {
 	private ComDynamicService comDynamicService;
 	@Autowired
 	private InstDynamicService instDynamicService;
+	@Autowired
+	private SuccstudentService succstudentService;
+	@Autowired
+	private ChatPrintscreenService chatPrintscreenService;
+	@Value("${CHAT_PRINTSCREEN_SIZE}")
+	private int CHAT_PRINTSCREEN_SIZE;
 	
+	
+	//官网首页
 	@RequestMapping("/index.action")
 	public ModelAndView homePage() throws Exception {
 		ModelAndView mv = new ModelAndView();
@@ -34,13 +49,42 @@ public class HomeController {
 		List<ComDynamicMapper> comlist = comDynamicService.findByPage();
 		List<InstDynamicMapper> instlist = instDynamicService.findByPage();
 		List<Video> videoList = homeService.getVideoList();
+		List<Succstudent> studentlist = succstudentService.selectAll();
 
 		mv.addObject("homePage", homePage);
 		mv.addObject("comDynamic",comlist);
 		mv.addObject("instDynamic",instlist);
 		mv.addObject("videoList", videoList);
+		mv.addObject("studentlist", studentlist);
 		
 		mv.setViewName("index");
 		return mv;
+	}
+	//跳转就业行情页面
+	@RequestMapping("/employment")
+	public String employmentPage(Model model) throws Exception{
+		List<Succstudent> list = succstudentService.selectAll();
+		List<ChatPrintscreen> chatlist = chatPrintscreenService.selectByNum(CHAT_PRINTSCREEN_SIZE);
+		System.out.println(chatlist.size());
+		for (ChatPrintscreen chatPrintscreen : chatlist) {
+			System.out.println(chatPrintscreen.getC_src());
+		}
+		model.addAttribute("chatlist", chatlist);
+		model.addAttribute("studentlist", list);
+		return "employment";
+	}
+	
+	//跳转学员天地页面
+	@RequestMapping("/students")
+	public String studentPage(int pageCode,Model model) throws Exception{
+		PageBean<Succstudent> pageBean = succstudentService.selectByPage(pageCode);
+		model.addAttribute("pageBean", pageBean);
+		return "student";
+	}
+	
+	//跳转联系我们界面
+	@RequestMapping("/contact_us.action")
+	public String toContactPage() throws Exception{
+		return "contact_us";
 	}
 }
