@@ -1,37 +1,37 @@
 $(function(){
-//	var tr_num=0;
-//	var timer=setInterval(function(){
-//		$(".mian .growth .growth_cnt .list table tr:nth-child(2n):odd").css("background","#f2f2fa");
-//		$(".mian .growth .growth_cnt .list table tr:nth-child(2n):even").css("background","#e6ebf6");
-//		$(".job_list").animate({top:10+"px"},1000,function(){		
-//			tr_num++;
-//	
-//			$(".job_list").append($(".job_list tr").eq(0));
-//			$(".job_list").css("top","60px");
-//			
-//		})
-//		
-//		
-//		if(tr_num%2==0){
-//			for(var k=0;k<$(".job_list tr").length;k++){
-//				if(k%2==0){
-//					$(".job_list tr").eq(k).css("background","#f2f2fa");
-//				}else{
-//					$(".job_list tr").eq(k).css("background","#e6ebf6");
-//				}
-//			}
-//		}else{
-//			for(var k=0;k<$(".job_list tr").length;k++){
-//				if(k%2==0){
-//					$(".job_list tr").eq(k).css("background","#e6ebf6");
-//				}else{
-//					$(".job_list tr").eq(k).css("background","#f2f2fa");
-//				}
-//			}
-//		}
-//		
-//	},4000)
-//	
+	var tr_num=0;
+	var timer=setInterval(function(){
+		$(".mian .growth .growth_cnt .list table tr:nth-child(2n):odd").css("background","#f2f2fa");
+		$(".mian .growth .growth_cnt .list table tr:nth-child(2n):even").css("background","#e6ebf6");
+		$(".job_list").animate({top:10+"px"},1000,function(){		
+			tr_num++;
+	
+			$(".job_list").append($(".job_list tr").eq(0));
+			$(".job_list").css("top","60px");
+			
+		})
+		
+		
+		if(tr_num%2==0){
+			for(var k=0;k<$(".job_list tr").length;k++){
+				if(k%2==0){
+					$(".job_list tr").eq(k).css("background","#f2f2fa");
+				}else{
+					$(".job_list tr").eq(k).css("background","#e6ebf6");
+				}
+			}
+		}else{
+			for(var k=0;k<$(".job_list tr").length;k++){
+				if(k%2==0){
+					$(".job_list tr").eq(k).css("background","#e6ebf6");
+				}else{
+					$(".job_list tr").eq(k).css("background","#f2f2fa");
+				}
+			}
+		}
+		
+	},4000)
+	
 	
 //	特效:
 	$(window).scroll(function(){

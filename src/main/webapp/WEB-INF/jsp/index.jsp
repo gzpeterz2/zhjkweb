@@ -190,7 +190,7 @@
 				<div class="growth_cnt">
 					<h1 class="title">从<span>无到有</span> , 茁壮成长</h1>
 					<p class="titles">往届知海人都各自找到了自己满意的工作 , 现在的收入往往是以前所不敢想的<br />而这些 , 仅仅是他们的起点</p>
-					<div class="list" id="rollCon">
+					<div class="list">
 						<table>
 							<thead>
 								<tr>
@@ -201,8 +201,18 @@
 									<td class="zy">职业</td>
 								</tr>
 							</thead>
-							<tbody class="job_list" id="rollSubject"></tbody>
-							<tbody id="rollcopy"></tbody>
+							<tbody class="job_list">
+							<c:forEach items="${studentlist }" var="sl">
+								<tr>
+									<td>${sl.name }</td>
+									<td>${sl.degree }</td>
+									<td>${sl.enterprize }</td>
+									<td>${sl.salary }</td>
+									<td>${sl.career }</td>
+									<%-- <td>${sl.hiredate }</td> --%>
+								</tr>
+							</c:forEach>
+							</tbody>
 						</table>
 					</div>
 				</div>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hc.web.mapper.ChatPrintscreenMapper">
+
+	<!-- 查询指定数量图片 -->
+	<select id="selectByNum" parameterType="int" resultType="chatPrintscreen">
+		select * from chat_printscreen order by c_id limit 0,#{num}
+	</select>
+</mapper>
