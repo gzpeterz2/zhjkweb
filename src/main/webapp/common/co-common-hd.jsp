@@ -36,7 +36,7 @@
 						</li>
 						<li><a href="personal_center.html">个人资料</a></li>
 						<li><a href="personal_center.html">消息<span>(0)</span></a></li>
-						<li>退出</li>
+						<li><a href="logout.action">退出</li>
 					</ul>
 				</div></c:if>
 				
@@ -63,7 +63,7 @@
 			<li><a href="teachers.html">师资力量</a></li>
 			<li><a href="dynamic.html">资讯动态</a></li>
 			<li>
-				<a href="students.html">学员天地</a>
+				<a href="students.action?pageCode=1">学员天地</a>
 				<!--<ol>-->
 					<!--<li><a href="students.html">学员故事</a></li>-->
 					<!--<li><a href="#">学员作品</a></li>-->

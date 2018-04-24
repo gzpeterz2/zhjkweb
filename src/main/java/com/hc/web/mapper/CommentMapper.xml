@@ -3,12 +3,14 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+<!-- by ouyangliang -->
 <mapper namespace="com.hc.web.mapper.CommentMapper">
 	
 	<select id="commentPageQuery" parameterType="QueryVo" resultType="Comment">
 		SELECT *
 		FROM `comment`
 		WHERE c_articleid = #{condition}
+		ORDER BY c_time DESC
 		LIMIT #{startRow},#{pageSize}
 	</select>
 	
@@ -17,6 +19,63 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		FROM `comment`
 		WHERE c_articleid = #{condition}
 	</select>
+	
+	<insert id="insertSelective" parameterType="Comment">
+		insert into comment
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="c_id != null">
+				c_id,
+			</if>
+			<if test="c_time != null">
+				c_time,
+			</if>
+			<if test="c_thumbups != null">
+				c_thumbups,
+			</if>
+			<if test="c_uid != null">
+				c_uid,
+			</if>
+			<if test="c_articleid != null">
+				c_articleid,
+			</if>
+			<if test="c_content != null">
+				c_content,
+			</if>
+			<if test="c_thumbuper != null">
+				c_thumbuper,
+			</if>			
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="c_id != null">
+				#{c_id,jdbcType=INTEGER},
+			</if>
+			<if test="c_time != null">
+				#{c_time,jdbcType=VARCHAR},
+			</if>
+			<if test="c_thumbups != null">
+				#{c_thumbups,jdbcType=INTEGER},
+			</if>
+			<if test="c_uid != null">
+				#{c_uid,jdbcType=INTEGER},
+			</if>
+			<if test="c_articleid != null">
+				#{c_articleid,jdbcType=INTEGER},
+			</if>
+			<if test="c_content != null">
+				#{c_content,jdbcType=VARCHAR},
+			</if>
+			<if test="c_thumbuper != null">
+				#{c_thumbuper,jdbcType=VARCHAR},
+			</if>
+			
+		</trim>
+	</insert>
+	
+	<select id="getCountByType" parameterType="String" resultType="Integer">
+		SELECT COUNT(1) FROM `comment` c INNER JOIN com_dynamic b ON c.c_articleid=b.id WHERE b.type = #{v}
+	</select>
+	
+	
 	
 
 </mapper>

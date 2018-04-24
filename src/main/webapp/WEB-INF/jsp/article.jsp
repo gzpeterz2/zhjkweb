@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ page isELIgnored="false"%>
@@ -41,8 +41,8 @@
 							<p>
 								<span><img src="img/article/yj.png" align="center" />${article.views }</span>
 								<span><img src="img/article/hf.png" align="center" />
-									${pageBean.totalCount }</span> <span><img src="img/article/zan.png" align="center" />
-									${article.thumbups }</span>
+									${pageBean.totalCount }</span> <span><img
+									src="img/article/zan.png" align="center" /> ${article.thumbups }</span>
 							</p>
 						</div>
 					</div>
@@ -84,30 +84,38 @@
 					<hr class="b_line" />
 					<ul class="reply_cnt">
 						<c:forEach items="${pageBean.beanList }" var="subcomment">
-							<li class="reply_cnt_user"><img src="${subcomment.webUser.u_head }"
-							class="hftx" />
-							<div class="hf_cnt">
-								<p class="user_cnt">
-									<span class="name">${subcomment.webUser.u_name }</span> <span class="level">
-									<c:if test="${subcomment.webUser.u_level <= 10}">初学乍练</c:if>
-									<c:if test="${subcomment.webUser.u_level > 10 && subcomment.webUser.u_level <= 30}">初窥门径</c:if>
-									<c:if test="${subcomment.webUser.u_level > 30 && subcomment.webUser.u_level <= 60}">已有小成</c:if>
-									<c:if test="${subcomment.webUser.u_level > 60 && subcomment.webUser.u_level <= 100}">少年壮志</c:if>
-									<c:if test="${subcomment.webUser.u_level > 100 && subcomment.webUser.u_level <= 140}">少年剑客</c:if>
-									<c:if test="${subcomment.webUser.u_level > 140 && subcomment.webUser.u_level <= 200}">武林浪人</c:if>
-									<c:if test="${subcomment.webUser.u_level > 200 && subcomment.webUser.u_level <= 300}">武林侠客</c:if>
-									<c:if test="${subcomment.webUser.u_level > 300 && subcomment.webUser.u_level <= 400}">仗剑天涯</c:if>
-									<c:if test="${subcomment.webUser.u_level > 400 && subcomment.webUser.u_level <= 650}">武林争雄</c:if>
-									<c:if test="${subcomment.webUser.u_level > 650 && subcomment.webUser.u_level <= 1000}">武林霸主</c:if>
-									<c:if test="${subcomment.webUser.u_level > 1000}">一代宗师</c:if>
-									</span>
-									<span class="announce">发表于<time>${subcomment.c_time }</time></span>
-								</p>
-								<div class="hf_text">${subcomment.c_content }</div>
-								<p class="review">
-									<span class="zan_user">${subcomment.c_thumbups }</span>
-								</p>
-							</div></li>
+							<li class="reply_cnt_user"><img
+								src="${subcomment.webUser.u_head }" class="hftx" />
+								<div class="hf_cnt">
+									<p class="user_cnt">
+										<span class="name">${subcomment.webUser.u_name }</span> <span
+											class="level"> <c:if
+												test="${subcomment.webUser.u_level <= 10}">初学乍练</c:if> <c:if
+												test="${subcomment.webUser.u_level > 10 && subcomment.webUser.u_level <= 30}">初窥门径</c:if>
+											<c:if
+												test="${subcomment.webUser.u_level > 30 && subcomment.webUser.u_level <= 60}">已有小成</c:if>
+											<c:if
+												test="${subcomment.webUser.u_level > 60 && subcomment.webUser.u_level <= 100}">少年壮志</c:if>
+											<c:if
+												test="${subcomment.webUser.u_level > 100 && subcomment.webUser.u_level <= 140}">少年剑客</c:if>
+											<c:if
+												test="${subcomment.webUser.u_level > 140 && subcomment.webUser.u_level <= 200}">武林浪人</c:if>
+											<c:if
+												test="${subcomment.webUser.u_level > 200 && subcomment.webUser.u_level <= 300}">武林侠客</c:if>
+											<c:if
+												test="${subcomment.webUser.u_level > 300 && subcomment.webUser.u_level <= 400}">仗剑天涯</c:if>
+											<c:if
+												test="${subcomment.webUser.u_level > 400 && subcomment.webUser.u_level <= 650}">武林争雄</c:if>
+											<c:if
+												test="${subcomment.webUser.u_level > 650 && subcomment.webUser.u_level <= 1000}">武林霸主</c:if>
+											<c:if test="${subcomment.webUser.u_level > 1000}">一代宗师</c:if>
+										</span> <span class="announce">发表于<time>${subcomment.c_time }</time></span>
+									</p>
+									<div class="hf_text">${subcomment.c_content }</div>
+									<p class="review">
+										<span class="zan_user">${subcomment.c_thumbups }</span>
+									</p>
+								</div></li>
 						</c:forEach>
 
 					</ul>
@@ -140,6 +148,7 @@
 					</div>
 				</div>
 				<div class="distinguish">
+					<form id="commentform" action="commentsubmit.action" method="post">
 					<div class="cnt_cnt">
 						<div id="odiv"
 							style="display: none; position: absolute; z-index: 100;">
@@ -152,12 +161,24 @@
 						</div>
 						<div onmousedown="show_element(event)" style="clear: both"
 							id="customized-buttonpane" class="editor"></div>
+						<textarea rows="" cols="" hidden="hidden" id="content"
+							name="c_content"></textarea>
 						<p class="textnum">当前已输入0字符,您还可以输入10000个字符</p>
 					</div>
-					<button class="btn_fbhf">发表回复</button>
-					<div class="go_login">
-						请先<a href="login.html">登录</a> 或<a href="register.html">注册</a>
-					</div>
+					<input type="hidden" name="c_articleid" value="${article.id }">
+					<button class="btn_fbhf" id="subbtn">发表回复</button>
+					</form>
+					<script type="text/javascript">
+						$(function() {
+
+							$("#subbtn").click(function() {
+								$("#content").html($("#customized-buttonpane").html()); 
+								$("#commentform").submit();
+								
+							});
+						});
+					</script>
+
 				</div>
 			</div>
 

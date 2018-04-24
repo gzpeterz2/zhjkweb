@@ -10,6 +10,10 @@ public interface CommentMapper {
 	List<Comment> commentPageQuery(QueryVo vo);
 
 	Integer commnetTotalCount(QueryVo vo);
+
+	void insertSelective(Comment comment);
+
+	Integer getCountByType(String string);
 	
 	
 }
