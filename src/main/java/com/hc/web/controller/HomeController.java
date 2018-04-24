@@ -87,4 +87,16 @@ public class HomeController {
 	public String toContactPage() throws Exception{
 		return "contact_us";
 	}
+	
+	//跳转学院介绍界面
+	@RequestMapping("/about_us.action")
+	public String toAboutUsPage() throws Exception{
+		return "about_us";
+	}
+	
+	//跳转教学环境界面
+	@RequestMapping("/environment.action")
+	public String toEnvironment() throws Exception{
+		return "environment";
+	}
 }
