@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ page isELIgnored="false"%>
+
 <link rel="stylesheet" type="text/css" href="css/common.css"/>
 <script type="text/javascript" src="js/common-header.js"></script>
 
@@ -16,23 +22,23 @@
 			<div>
 				<span>全国咨询电话：400-878-6338</span>
 				<img class="right" src="img/common/phone.png"/>
-				<ol>
-					<li><a href="tologin.action">${user.u_name}</a></li>
+				<c:if test="${user == null }"><ol>
+					<li><a href="tologin.action">登录</a></li>
 					<li><a href="toregister.action">注册</a></li>
-				</ol>
+				</ol></c:if>
 				
-<!-- 				<div id="common-login">
+				<c:if test="${user != null }"><div id="common-login">
 					<ul>
 						<li>
 							<img src="img/common/tx.png"/>
-							<span>user name</span>
+							<span>${user.u_name }</span>
 							<img id="arrow-right" src="img/common/图标_右箭头 - w.png"/>
 						</li>
 						<li><a href="personal_center.html">个人资料</a></li>
 						<li><a href="personal_center.html">消息<span>(0)</span></a></li>
-						<li>退出</li>
+						<li><a href="logout.action">退出</li>
 					</ul>
-				</div> -->
+				</div></c:if>
 				
 				
 				<img id="co-hd-search" src="img/common/ss_icon.png"/>
@@ -53,7 +59,7 @@
 					<li><a href="java.html">Java开发</a></li>
 				</ol>
 			</li>
-			<li><a href="employment.action">就业行情</a></li>
+			<li><a href="employment.html">就业行情</a></li>
 			<li><a href="teachers.html">师资力量</a></li>
 			<li><a href="dynamic.html">资讯动态</a></li>
 			<li>
@@ -68,8 +74,8 @@
 			<li>
 				<a href="#">关于我们</a>
 				<ol>
-					<li><a href="about_us.action">学院介绍</a></li>
-					<li><a href="environment.action">教学环境</a></li>
+					<li><a href="about_us.html">学院介绍</a></li>
+					<li><a href="environment.html">教学环境</a></li>
 					<!--<li><a href="#">常见问题</a></li>-->
 				</ol>
 			</li>

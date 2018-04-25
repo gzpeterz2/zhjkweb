@@ -21,19 +21,24 @@ $(function(){
 			$(".mian_content_cnt").css("height","410px");
 		}
 	})
-	var username="admin";//正确的用户名
-	var userpassword=123456;//正确的密码
+
 	$(".user_bnt_login").click(function(){
 		
 		$.post("login.action",$("#loginform").serialize(),function(data){
-			
-			
+			if (data.status == 200) {
+				location="community.action";
+			}else{
+				$(".user_name").addClass("border-color2");
+				$(".user_name>span").addClass("border-color2");
+				$(".user_password").addClass("border-color1");
+				$(".user_password>span").addClass("border-color1");
+				$(".tishi").css("display","block")
+				var timer=setInterval(function(){
+					$(".tishi").css("display","none")
+				},3000);
+			}
 			
 		});
-		
-		
-		
-		
 		
 		
 		/*

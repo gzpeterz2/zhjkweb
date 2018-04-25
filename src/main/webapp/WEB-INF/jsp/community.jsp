@@ -29,7 +29,7 @@
 							<div>
 								<h3>全部分类</h3>
 								<p>
-									主题<span>3792</span>,帖数<span>26万</span>
+									主题<span>${statistics.allTopicNum }</span>,帖数<span>${statistics.allComNum }</span>
 								</p>
 								<a href="postPageQuery.action?pageCode=1&condition="></a>
 							</div>
@@ -39,7 +39,7 @@
 							<div>
 								<h3>资源分享</h3>
 								<p>
-									主题<span>3792</span>,帖数<span>26万</span>
+									主题<span>${statistics.resTopicNum }</span>,帖数<span>${statistics.resComNum }</span>
 								</p>
 								<a href="postPageQuery.action?pageCode=1&condition=resource"></a>
 							</div>
@@ -49,7 +49,7 @@
 							<div>
 								<h3>技术交流</h3>
 								<p>
-									主题<span>3792</span>,帖数<span>26万</span>
+									主题<span>${statistics.tecTopicNum }</span>,帖数<span>${statistics.tecComNum }</span>
 								</p>
 								<a href="postPageQuery.action?pageCode=1&condition=technology"></a>
 							</div>
@@ -59,7 +59,7 @@
 							<div>
 								<h3>最新活动</h3>
 								<p>
-									主题<span>3792</span>,帖数<span>26万</span>
+									主题<span>${statistics.newTopicNum }</span>,帖数<span>${statistics.newComNum }</span>
 								</p>
 								<a href="postPageQuery.action?pageCode=1&condition=new"></a>
 							</div>

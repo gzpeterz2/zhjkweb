@@ -8,13 +8,12 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.hc.web.po.ComDynamic;
 import com.hc.web.po.Comment;
 import com.hc.web.po.QueryVo;
-import com.hc.web.po.Video;
+import com.hc.web.po.Statistics;
 import com.hc.web.service.CommunityService;
 import com.hc.web.service.PageQueryService;
 import com.hc.web.util.PageBean;
@@ -35,11 +34,13 @@ public class CommunityController {
 	public String toCommunity(Model model){
 		List<ComDynamic> postList = communityService.getPostList();
 		Integer totalCount = communityService.totalCount();
+		Statistics statistics = communityService.getStatistics();
 		PageBean<ComDynamic> pageBean = new PageBean<>();
 		pageBean.setBeanList(postList);
 		pageBean.setPageCode(1);
 		pageBean.setTotalCount(totalCount);
 		pageBean.setPageSize(8);
+		model.addAttribute("statistics", statistics);
 		model.addAttribute("pageBean", pageBean);
 		model.addAttribute("condition", "");
 		return "community";
@@ -51,8 +52,9 @@ public class CommunityController {
 	@RequestMapping("/postPageQuery")
 	public String pageQuery(QueryVo vo,Model model){
 		vo.setPageSize(8);
-		
+		Statistics statistics = communityService.getStatistics();
 		PageBean<ComDynamic> pageBean = pageQueryService.postPageQuery(vo);
+		model.addAttribute("statistics", statistics);
 		model.addAttribute("pageBean", pageBean);
 		model.addAttribute("condition", vo.getCondition());
 		return "community";
