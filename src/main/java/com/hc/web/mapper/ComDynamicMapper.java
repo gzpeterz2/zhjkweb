@@ -40,4 +40,5 @@ public interface ComDynamicMapper {
 
 	Integer getCountByType(String string);
 
+
 }

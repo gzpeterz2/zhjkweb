@@ -55,9 +55,10 @@
 						<ul class="editor_cnt">${article.content }
 						</ul>
 						<div class="praise">
-							<a href="#"> <img src="img/article/preview_like_icon.png" />赞
-							</a> <span>${article.thumbups }</span>
+							<a href="javascript:void(0)" > <img src="img/article/preview_like_icon.png" id="thumbup"/>赞
+							</a> <span id="zanNum">${article.thumbups }</span>
 							<div>+1</div>
+							
 						</div>
 					</div>
 					<div class="al_footer">

@@ -1,9 +1,11 @@
 package com.hc.web.service.impl;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -103,6 +105,43 @@ public class CommunityServiceImpl implements CommunityService {
 		statistics.setNewComNum(newComNum);
 		
 		return statistics;
+	}
+
+	@Override
+	
+	//返回true 该uid用户已经点过赞了  返回flase 未点过赞
+	public boolean isThumbupedByArticleIdAndWebuser(Integer aid, Integer uid) {
+		ComDynamic comDynamic = comDynamicMapper.selectByPrimaryKey(aid);
+		String thumbupers = comDynamic.getThumbuper();
+		if (StringUtils.isNotBlank(thumbupers)) {
+			boolean flag = false;
+			String said = uid + "";
+			String[] thumbs = thumbupers.split(",");
+			for (String string : thumbs) {
+				if (said.equals(string)) {
+					flag = true;
+					break;
+				}
+			}
+			if (flag) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+
+	@Override
+	public void thumbupByArticleIdAndWebuser(Integer aid,Integer uid) {
+		ComDynamic comDynamic = comDynamicMapper.selectByPrimaryKey(aid);
+		String thumbupers = comDynamic.getThumbuper();
+		comDynamic.setThumbups(comDynamic.getThumbups() + 1);
+		if (thumbupers == null) {
+			comDynamic.setThumbuper(uid.toString() + ",");
+		}else {
+			comDynamic.setThumbuper(thumbupers + uid.toString() + ",");
+		}
+		comDynamicMapper.updateByPrimaryKeySelective(comDynamic);
 	}
 
 }

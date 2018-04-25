@@ -1,5 +1,5 @@
 $(function(){
-	var pags=["personal_center1.html","","personal_center2.html","personal_center3.html"]
+	var pags=["common/personal_center1.jsp","","common/personal_center2.jsp","common/personal_center3.jsp"]
 	$(".cnt_right").load(pags[0]);
 	
 	$(".tab_left p").click(function(){

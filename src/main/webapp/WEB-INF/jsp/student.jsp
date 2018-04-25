@@ -31,7 +31,7 @@
 									<p class="s_company"><span>就职公司：</span><span>${bl.enterprize }</span></p>
 									<p class="s_salary"><span>薪资待遇：</span><span>${bl.salary }/月</span></p>
 									<p class="s_remarks"><span>学员寄语：</span><span>${bl.sendword }</span></p>
-									<a href="succstudent/article.action">了解更多</a>
+									<a href="student_${bl.id }.action">了解更多</a>
 								</div>
 							</div>
 						</c:when>
@@ -45,7 +45,7 @@
 									<p class="s_company"><span>就职公司：</span><span>${bl.enterprize }</span></p>
 									<p class="s_salary"><span>薪资待遇：</span><span>${bl.salary }/月</span></p>
 									<p class="s_remarks"><span>学员寄语：</span><span>${bl.sendword }</span></p>
-									<a href="succstudent/article.action">了解更多</a>
+									<a href="student_${bl.id }.action">了解更多</a>
 								</div>
 							</div>
 						</c:otherwise>

@@ -18,4 +18,9 @@ public interface CommunityService {
 
 	Statistics getStatistics();
 
+	boolean isThumbupedByArticleIdAndWebuser(Integer aid, Integer uid);
+
+
+	void thumbupByArticleIdAndWebuser(Integer aid, Integer uid);
+
 }
