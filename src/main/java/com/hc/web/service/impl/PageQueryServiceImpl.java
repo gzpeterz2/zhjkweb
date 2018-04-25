@@ -37,6 +37,7 @@ public class PageQueryServiceImpl implements PageQueryService {
 		List<Video> videoList = new ArrayList<>();
 		Integer pageCode = vo.getPageCode();
 		Integer pageSize = vo.getPageSize();
+		
 		Integer startRow = (pageCode - 1) * pageSize;
 		vo.setStartRow(startRow);
 

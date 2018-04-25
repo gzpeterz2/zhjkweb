@@ -61,6 +61,27 @@
 			<if test="thumbups != null">
 				thumbups,
 			</if>
+			<if test="editor != null">
+				editor,
+			</if>
+			<if test="edit_time != null">
+				edit_time,
+			</if>
+			<if test="content != null">
+				content,
+			</if>
+			<if test="type != null">
+				type,
+			</if>
+			<if test="cover != null">
+				cover,
+			</if>
+			<if test="top != null">
+				top,
+			</if>
+			<if test="original != null">
+				original,
+			</if>
 		</trim>
 		<trim prefix="values (" suffix=")" suffixOverrides=",">
 			<if test="id != null">
@@ -83,6 +104,27 @@
 			</if>
 			<if test="thumbups != null">
 				#{thumbups,jdbcType=INTEGER},
+			</if>
+			<if test="editor != null">
+				#{editor,jdbcType=VARCHAR},
+			</if>
+			<if test="edit_time != null">
+				#{edit_time,jdbcType=VARCHAR},
+			</if>
+			<if test="content != null">
+				#{content,jdbcType=VARCHAR},
+			</if>
+			<if test="type != null">
+				#{type,jdbcType=VARCHAR},
+			</if>
+			<if test="cover != null">
+				#{cover,jdbcType=VARCHAR},
+			</if>
+			<if test="top != null">
+				#{top,jdbcType=INTEGER},
+			</if>
+			<if test="original != null">
+				#{original,jdbcType=INTEGER},
 			</if>
 		</trim>
 	</insert>
@@ -155,7 +197,7 @@
 	
 	<select id="lastPageQuery" resultMap="BaseResultMap" parameterType="QueryVo" resultType="ComDynamic">
 		SELECT * FROM com_dynamic		
-		ORDER BY top,post_time DESC
+		ORDER BY post_time DESC
 		LIMIT #{startRow},#{pageSize}
 	</select>
 
@@ -185,6 +227,11 @@
 		SET	views = views+1
 		WHERE id = #{id}
 	</update>
+	
+	<select id="getCountByType" parameterType="String" resultType="Integer">
+		SELECT COUNT(1) FROM com_dynamic WHERE type = #{v}
+	</select>
+	
 	
 <!-- 欧阳亮添加部分   止   -->
 

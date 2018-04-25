@@ -3,6 +3,7 @@ package com.hc.web.service;
 import java.util.List;
 
 import com.hc.web.po.ComDynamic;
+import com.hc.web.po.Statistics;
 
 
 public interface CommunityService {
@@ -12,5 +13,9 @@ public interface CommunityService {
 	Integer totalCount();
 
 	ComDynamic getArticleById(Integer aid);
+
+	void addArticle(ComDynamic comDynamic);
+
+	Statistics getStatistics();
 
 }

@@ -4,7 +4,7 @@ package com.hc.web.po;
 
 /**
  * 分页查询pojo
- * @author 欧阳亮
+ * @author ouyang
  */
 public class QueryVo {
 	

@@ -37,4 +37,7 @@ public interface ComDynamicMapper {
 	Integer lastPageCount(QueryVo vo);
 
 	void incrViewsById(Integer aid);
+
+	Integer getCountByType(String string);
+
 }

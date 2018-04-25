@@ -8,4 +8,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM webuser WHERE  u_id = #{v}
 	</select>
 	
+	<select id="getUserByCode" parameterType="String" resultType="WebUser">
+		SELECT * FROM webuser WHERE  u_code = #{v}
+	</select>
+	
+	
 </mapper>
