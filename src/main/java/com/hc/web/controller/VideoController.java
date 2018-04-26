@@ -18,7 +18,7 @@ import com.hc.web.service.VideoService;
 import com.hc.web.util.PageBean;
 
 /**
- * 视频
+ * 视频页相关
  * @author 欧阳亮
  */
 @Controller

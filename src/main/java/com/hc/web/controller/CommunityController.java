@@ -9,13 +9,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hc.web.po.ComDynamic;
 import com.hc.web.po.Comment;
 import com.hc.web.po.QueryVo;
 import com.hc.web.po.Statistics;
+import com.hc.web.po.WebUser;
 import com.hc.web.service.CommunityService;
 import com.hc.web.service.PageQueryService;
+import com.hc.web.util.HCResult;
 import com.hc.web.util.PageBean;
 
 
@@ -77,6 +80,24 @@ public class CommunityController {
 		return "article";
 	}
 	
+		
+	
+	@RequestMapping("/articleThumbup")
+	@ResponseBody
+	public HCResult thumbup(String artid,HttpServletRequest request){
+	
+		Integer aid = Integer.valueOf(artid);
+		WebUser webUser  = (WebUser) request.getSession().getAttribute("user");
+		Integer uid = webUser.getU_id();
+		if (webUser != null) {
+			boolean thumbuped = communityService.isThumbupedByArticleIdAndWebuser(aid,uid);
+			if (!thumbuped) {
+				communityService.thumbupByArticleIdAndWebuser(aid,uid);
+				return HCResult.ok();
+			}
+		}
+		return HCResult.build(400, "该用户点过赞了或未登录");
+	}
 	
 	
 	

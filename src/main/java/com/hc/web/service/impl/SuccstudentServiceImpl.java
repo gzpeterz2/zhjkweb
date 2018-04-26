@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.hc.web.mapper.SuccstudentMapper;
+import com.hc.web.po.StudentDesc;
 import com.hc.web.po.Succstudent;
 import com.hc.web.service.SuccstudentService;
 import com.hc.web.util.PageBean;
@@ -51,6 +52,12 @@ public class SuccstudentServiceImpl implements SuccstudentService {
 		//设置当前页
 		pageBean.setPageCode(pageCode);
 		return pageBean;
+	}
+
+	@Override
+	public StudentDesc getStuDescById(Integer sid) {
+		StudentDesc stuDesc = succstudentMapper.getStuDescById(sid);
+		return stuDesc;
 	}
 
 }

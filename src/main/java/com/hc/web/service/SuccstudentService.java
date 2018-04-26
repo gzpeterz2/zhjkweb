@@ -2,6 +2,7 @@ package com.hc.web.service;
 
 import java.util.List;
 
+import com.hc.web.po.StudentDesc;
 import com.hc.web.po.Succstudent;
 import com.hc.web.util.PageBean;
 
@@ -11,5 +12,8 @@ public interface SuccstudentService {
 	List<Succstudent> selectAll() throws Exception;
 	//分页查询学员信息
 	PageBean<Succstudent> selectByPage(int pageCode);
+	
+	
+	StudentDesc getStuDescById(Integer sid);
 	
 }

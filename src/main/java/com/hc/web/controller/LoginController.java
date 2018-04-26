@@ -58,4 +58,17 @@ public class LoginController {
 		return "index";
 	}
 	
+	@RequestMapping("isLogin")
+	@ResponseBody
+	public HCResult isLogin(HttpServletRequest request){
+		Object object = request.getSession().getAttribute("user");
+		if (object != null) {
+			return HCResult.ok();
+		}else {
+			return HCResult.build(400, "没有登录");
+		}
+		
+	}
+	
+	
 }

@@ -15,8 +15,19 @@ public class ComDynamic {
 	private String cover;
 	private Integer top;
 	private Integer original;
+	private String thumbuper;
+	
+	
 
-    public String getEditor() {
+    public String getThumbuper() {
+		return thumbuper;
+	}
+
+	public void setThumbuper(String thumbuper) {
+		this.thumbuper = thumbuper;
+	}
+
+	public String getEditor() {
 		return editor;
 	}
 
