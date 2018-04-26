@@ -34,8 +34,8 @@
 							<span>${user.u_name }</span>
 							<img id="arrow-right" src="img/common/图标_右箭头 - w.png"/>
 						</li>
-						<li><a href="personal_center.html">个人资料</a></li>
-						<li><a href="personal_center.html">消息<span>(0)</span></a></li>
+						<li><a href="personal_center.action">个人资料</a></li>
+						<li><a href="personal_center.action">消息<span>(0)</span></a></li>
 						<li><a href="logout.action">退出</li>
 					</ul>
 				</div></c:if>
