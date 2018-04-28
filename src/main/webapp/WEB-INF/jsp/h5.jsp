@@ -155,7 +155,17 @@
 						<div class="poster-main B_Demo">
 							<div class="poster-btn poster-prev-btn"></div>
 							<ul class="poster-list">
-								<li class="poster-item">
+								<c:forEach items="${teacherList }" var="htl">
+									<li class="poster-item">
+										<a href="JavaScript: ;"><img src="${htl.t_photos }" width="100%" >
+										 <div class="pm_txet">
+										 	<h3>${htl.t_name }</h3>
+										 	<p>${htl.t_course }</p>
+										 </div>
+										</a>	
+									</li>
+								</c:forEach>
+								<!-- <li class="poster-item">
 									<a href="JavaScript: ;"><img src="img/dissertation_img/bg03.png" width="100%" >
 									 <div class="pm_txet">
 									 	<h3>屈老师</h3>
@@ -202,15 +212,7 @@
 									 	<p>HTML5前端讲师</p>
 									 </div>
 									</a>	
-								</li>
-								<li class="poster-item">
-									<a href="JavaScript: ;"><img src="img/dissertation_img/bg03.png" width="100%" >
-									 <div class="pm_txet">
-									 	<h3>屈老师</h3>
-									 	<p>HTML5前端讲师</p>
-									 </div>
-									</a>	
-								</li>
+								</li> -->
 								
 							</ul>
 							<div class="poster-btn poster-next-btn"></div>

@@ -49,4 +49,9 @@ public class TeacherServiceImpl implements TeacherService {
 		return pageBean;
 	}
 
+	@Override
+	public List<Teacher> selectByCourse(String course) {
+		return teacherMapper.selectByCourse(course);
+	}
+
 }

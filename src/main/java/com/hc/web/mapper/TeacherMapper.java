@@ -11,4 +11,6 @@ public interface TeacherMapper {
 
 	int selectCount();
 
+	List<Teacher> selectByCourse(String course);
+
 }

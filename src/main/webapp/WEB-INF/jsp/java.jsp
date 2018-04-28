@@ -142,27 +142,12 @@
 	     			<a href="JavaScript: ;" class="tm_right"><img src="img/dissertation_img/right.png" alt="" /></a>   
 	     			<div class="tm_banners m_certer">
 	     				<ul class="tm_items">
-		     				<li>
-		     					<img src="img/dissertation_img/TC.png" alt="" />
-		     				    <h2>靳老师<span>（高级UI讲师）</span></h2>
-		     				</li>
-		     				<li>
-		     					<img src="img/dissertation_img/TC.png" alt="" />
-		     				    <h2>靳老师<span>（高级UI讲师）</span></h2>
-		     				</li>
-		     				<li>
-		     					<img src="img/dissertation_img/TC.png" alt="" />
-		     				    <h2>靳老师<span>（高级UI讲师）</span></h2>
-		     				</li>
-		     				<li>
-		     					<img src="img/dissertation_img/TC.png" alt="" />
-		     				    <h2>靳老师<span>（高级UI讲师）</span></h2>
-		     				</li>
-		     				<li>
-		     					<img src="img/dissertation_img/TC.png" alt="" />
-		     				    <h2>靳老师<span>（高级UI讲师）</span></h2>
-		     				</li>
-		     				
+	     					<c:forEach items="${teacherList }" var="tl">
+			     				<li>
+			     					<img src="${tl.t_photos }" alt="" />
+			     				    <h2>${tl.t_name }<span>（高级${tl.t_course }讲师）</span></h2>
+			     				</li>
+	     					</c:forEach>
 	     				</ul>
 	     			</div>
 	     			                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           

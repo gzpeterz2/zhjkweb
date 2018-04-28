@@ -166,7 +166,18 @@
 	    	 	<span class="tc_string m_conter"></span>
 	    	 	<div class="tc_banner">
 	    	 		<ul class="tc_item">
-	    	 			<li>
+	    	 			<c:forEach items="${teacherList }" var="utl">
+		    	 			<li>
+		    	 				<div class="tc_top">
+		    	 					<div class="imag"><img src="${utl.t_photos }" alt="" /></div>
+		    	 					<h2>${utl.t_name }</h2>
+		    	 				</div>
+		    	 			    <div class="tc_bottom">
+		    	 			    	${utl.t_introduction }
+		    	 			    </div>
+		    	 			</li>
+	    	 			</c:forEach>
+	    	 			<!-- <li>
 	    	 				<div class="tc_top">
 	    	 					<div class="imag"><img src="img/dissertation_img/utech.png" alt="" /></div>
 	    	 					<h2>张老师</h2>
@@ -201,16 +212,7 @@
 	    	 			    <div class="tc_bottom">
 	    	 			    	10年以上视觉设计实战授课与营销策划经验，获注册策划师资格，CCTV电视传播研究部课题研发组首席设计师。推崇 “案例驱动式”及“任务获取式”授课。精通Ps、Ai、Axure等设计与交互软件及Web、Ui、字体、标志、Vi设计等。
 	    	 			    </div>
-	    	 			</li>
-	    	 			<li>
-	    	 				<div class="tc_top">
-	    	 					<div class="imag"><img src="img/dissertation_img/utech.png" alt="" /></div>
-	    	 					<h2>张老师</h2>
-	    	 				</div>
-	    	 			    <div class="tc_bottom">
-	    	 			    	10年以上视觉设计实战授课与营销策划经验，获注册策划师资格，CCTV电视传播研究部课题研发组首席设计师。推崇 “案例驱动式”及“任务获取式”授课。精通Ps、Ai、Axure等设计与交互软件及Web、Ui、字体、标志、Vi设计等。
-	    	 			    </div>
-	    	 			</li>
+	    	 			</li> -->
  	 			
 	    	 		</ul>
 	    	 		
