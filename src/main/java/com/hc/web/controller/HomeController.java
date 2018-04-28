@@ -14,27 +14,35 @@ import com.hc.web.mapper.InstDynamicMapper;
 import com.hc.web.po.ChatPrintscreen;
 import com.hc.web.po.HomePage;
 import com.hc.web.po.Succstudent;
+import com.hc.web.po.Teacher;
 import com.hc.web.po.Video;
 import com.hc.web.service.ChatPrintscreenService;
 import com.hc.web.service.ComDynamicService;
 import com.hc.web.service.HomeService;
 import com.hc.web.service.InstDynamicService;
 import com.hc.web.service.SuccstudentService;
+import com.hc.web.service.TeacherService;
 import com.hc.web.util.PageBean;
 
 @Controller
 public class HomeController {
-	
+	//首页服务
 	@Autowired
 	private HomeService homeService;
 	@Autowired
 	private ComDynamicService comDynamicService;
 	@Autowired
 	private InstDynamicService instDynamicService;
+	//学员信息管理服务
 	@Autowired
 	private SuccstudentService succstudentService;
+	//师资力量服务
+	@Autowired
+	private TeacherService teacherService;
+	//就业行情页面聊天截图服务
 	@Autowired
 	private ChatPrintscreenService chatPrintscreenService;
+	//聊天截图显示张数
 	@Value("${CHAT_PRINTSCREEN_SIZE}")
 	private int CHAT_PRINTSCREEN_SIZE;
 	
@@ -80,6 +88,14 @@ public class HomeController {
 		PageBean<Succstudent> pageBean = succstudentService.selectByPage(pageCode);
 		model.addAttribute("pageBean", pageBean);
 		return "student";
+	}
+	
+	//跳转师资力量页面
+	@RequestMapping("/teachers")
+	public String toTeachersPage(int pageCode,Model model) throws Exception{
+		PageBean<Teacher> pageBean = teacherService.selectByPage(pageCode);
+		model.addAttribute("pageBean", pageBean);
+		return "teachers";
 	}
 	
 	//跳转联系我们界面
