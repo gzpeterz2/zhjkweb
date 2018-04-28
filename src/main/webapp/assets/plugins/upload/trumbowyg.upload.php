@@ -17,7 +17,7 @@
 /**
  * Upload directory
  */
-define("UPLOADDIR", "./uploaded-files/");
+define("UPLOADDIR", "/uploaded-files/");
 
 
 

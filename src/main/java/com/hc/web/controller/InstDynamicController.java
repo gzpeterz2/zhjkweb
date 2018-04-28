@@ -37,7 +37,7 @@ public class InstDynamicController {
 		}
 		return "error";
 	}
-	//获取学员动态前五条记录
+	//获取学院动态前五条记录
 	@RequestMapping("/findByPage.action")
 	@ResponseBody
 	public List<InstDynamicMapper> findByPage(){

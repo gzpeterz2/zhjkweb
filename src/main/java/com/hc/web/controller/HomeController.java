@@ -115,4 +115,20 @@ public class HomeController {
 	public String toEnvironment() throws Exception{
 		return "environment";
 	}
+	
+	//跳转UI界面
+	@RequestMapping("/ui.action")
+	public String toUID() throws Exception{
+		return "ui";
+	}
+	//跳转UI界面
+	@RequestMapping("/h5.action")
+	public String toH5() throws Exception{
+		return "h5";
+	}
+	//跳转UI界面
+	@RequestMapping("/java.action")
+	public String toJAVA() throws Exception{
+		return "java";
+	}
 }
