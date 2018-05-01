@@ -18,7 +18,7 @@ public interface ComDynamicMapper {
 
     int updateByPrimaryKey(ComDynamic record);
 
-	List<ComDynamicMapper> findByPage();
+	List<ComDynamic> findByPage();
 
 	List<ComDynamic> getPostList();
 

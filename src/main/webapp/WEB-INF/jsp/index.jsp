@@ -49,7 +49,7 @@
 					<div class="college">
 						<p class="recommend_two_title">
 							<span>学院动态</span>
-							<a href="dynamic.html">更多&gt;</a>
+							<a href="instDynamicPageQuery.action?pageCode=1">更多&gt;</a>
 						</p>
 						<div class="recommend_two_cnt">
 							<div class="cnt_left">

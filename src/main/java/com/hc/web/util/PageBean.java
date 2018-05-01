@@ -65,4 +65,10 @@ public class PageBean<T> {
 	public void setBeanList(List<T> beanList) {
 		this.beanList = beanList;
 	}
+	@Override
+	public String toString() {
+		return "PageBean [pageCode=" + pageCode + ", totalPage=" + totalPage + ", totalCount=" + totalCount
+				+ ", pageSize=" + pageSize + ", beanList=" + beanList + "]";
+	}
+	
 }
