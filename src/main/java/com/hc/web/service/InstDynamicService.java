@@ -4,13 +4,16 @@ import java.util.List;
 
 import com.hc.web.mapper.InstDynamicMapper;
 import com.hc.web.po.InstDynamic;
+import com.hc.web.util.PageBean;
+import com.hc.web.util.QueryVo;
 
 public interface InstDynamicService {
-	//添加学院动态资讯
-	int addDynamic(InstDynamic instDynamic);
-	//更新资讯
-	int updateDynamic(InstDynamic instDynamic);
+	
 	//获取前五条记录
-	List<InstDynamicMapper> findByPage();
+	public List<InstDynamic> findByPage();
+
+	public PageBean<InstDynamic> queryByPage(QueryVo vo);
+
+	public InstDynamic getInstDynamicDescById(Integer artId);
 
 }

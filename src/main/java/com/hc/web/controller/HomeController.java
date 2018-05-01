@@ -9,10 +9,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.hc.web.mapper.ComDynamicMapper;
-import com.hc.web.mapper.InstDynamicMapper;
 import com.hc.web.po.ChatPrintscreen;
+import com.hc.web.po.ComDynamic;
 import com.hc.web.po.HomePage;
+import com.hc.web.po.InstDynamic;
 import com.hc.web.po.Succstudent;
 import com.hc.web.po.Teacher;
 import com.hc.web.po.Video;
@@ -54,8 +54,8 @@ public class HomeController {
 		HomePage homePage = homeService.getHomePage();
 		
 		
-		List<ComDynamicMapper> comlist = comDynamicService.findByPage();
-		List<InstDynamicMapper> instlist = instDynamicService.findByPage();
+		List<ComDynamic> comlist = comDynamicService.findByPage();
+		List<InstDynamic> instlist = instDynamicService.findByPage();
 		List<Video> videoList = homeService.getVideoList();
 		List<Succstudent> studentlist = succstudentService.selectAll();
 
@@ -110,12 +110,7 @@ public class HomeController {
 		return "about_us";
 	}
 	
-	//跳转教学环境界面
-	@RequestMapping("/environment.action")
-	public String toEnvironment() throws Exception{
-		return "environment";
-	}
-	
+		
 	//跳转UI界面
 	@RequestMapping("/ui.action")
 	public String toUID() throws Exception{
@@ -131,4 +126,5 @@ public class HomeController {
 	public String toJAVA() throws Exception{
 		return "java";
 	}
+	
 }
