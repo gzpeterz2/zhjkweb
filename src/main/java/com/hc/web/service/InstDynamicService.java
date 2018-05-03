@@ -16,4 +16,10 @@ public interface InstDynamicService {
 
 	public InstDynamic getInstDynamicDescById(Integer artId);
 
+	public List<InstDynamic> getOtherList(Integer artId);
+	//获取当前记录的上一条记录
+	public InstDynamic getBeforeId(Integer artId);
+	//获取当前记录的下一条记录
+	public InstDynamic getAfterId(Integer artId);
+
 }
