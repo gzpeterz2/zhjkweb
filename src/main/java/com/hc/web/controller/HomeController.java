@@ -118,7 +118,7 @@ public class HomeController {
 		return "environment";
 	}
 	
-	//跳转UI界面
+	//跳转课程界面
 	@RequestMapping("/{course}")
 	public String toUID(@PathVariable String course,Model model) throws Exception{
 		List<Teacher> list = teacherService.selectByCourse(course);

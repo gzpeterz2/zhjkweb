@@ -20,13 +20,18 @@ import com.hc.web.service.CommunityService;
 import com.hc.web.util.HCResult;
 import com.hc.web.util.UploadUtils;
 
+
+/**
+ *  登录
+ * @author ouyangliang
+ */
 @Controller
 public class KeynoteController {
 	@Value("${STUDENT_PHOTOS_UPLOAD_PATH}")
 	private String STUDENT_PHOTOS_UPLOAD_PATH;
 
 	
-	@RequestMapping("/keynote.action")
+	@RequestMapping("/keynote")
 	public String toKeynote(HttpServletRequest request){
 		Object user = request.getSession().getAttribute("user");
 		if (user == null) {
@@ -38,7 +43,7 @@ public class KeynoteController {
 	@Autowired
 	private CommunityService communityService;
 	
-	@RequestMapping("keynotesubmit.action")
+	@RequestMapping("/keynotesubmit")
 	public String keynotesubmit(ComDynamic comDynamic){
 		if (comDynamic != null) {
 			communityService.addArticle(comDynamic);
@@ -46,7 +51,7 @@ public class KeynoteController {
 		return "redirect:community.action";
 	}
 	
-	@RequestMapping("/uploadpic.action")
+	@RequestMapping("/uploadpic")
 	@ResponseBody
 	public HCResult uploadPic(MultipartFile file) throws Exception{
 		//获取上传的文件名
