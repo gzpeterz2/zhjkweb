@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.hc.web.mapper.BannerMapper;
 import com.hc.web.mapper.ComDynamicMapper;
+import com.hc.web.po.ComDynamic;
 import com.hc.web.service.ComDynamicService;
 
 public class ComDynamicServiceImpl implements ComDynamicService {
@@ -13,7 +14,7 @@ public class ComDynamicServiceImpl implements ComDynamicService {
 	private ComDynamicMapper comDynamicMapper;
 
 	@Override
-	public List<ComDynamicMapper> findByPage() {
+	public List<ComDynamic> findByPage() {
 		
 		return comDynamicMapper.findByPage();
 	}

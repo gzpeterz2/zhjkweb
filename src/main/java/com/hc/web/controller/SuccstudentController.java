@@ -16,7 +16,7 @@ public class SuccstudentController {
 	@Autowired
 	private SuccstudentService succstudentService;
 	
-	@RequestMapping("/student_*.action")
+	@RequestMapping("/student_*")
 	public String toStuDesc(HttpServletRequest request,Model model){
 		StringBuffer requestURL = request.getRequestURL();
 		int begin = requestURL.lastIndexOf("_") + 1;

@@ -22,7 +22,7 @@ public class CommentController {
 	@Autowired
 	private CommentService commentService;
 	
-	@RequestMapping("commentsubmit")
+	@RequestMapping("/commentsubmit")
 	public String commentSubmit(Comment comment,HttpServletRequest request){
 		HttpSession session = request.getSession();
 		WebUser user = (WebUser) session.getAttribute("user");

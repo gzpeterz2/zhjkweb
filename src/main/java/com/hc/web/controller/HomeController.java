@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.hc.web.mapper.ComDynamicMapper;
-import com.hc.web.mapper.InstDynamicMapper;
 import com.hc.web.po.ChatPrintscreen;
+import com.hc.web.po.ComDynamic;
 import com.hc.web.po.HomePage;
+import com.hc.web.po.InstDynamic;
 import com.hc.web.po.Succstudent;
 import com.hc.web.po.Teacher;
 import com.hc.web.po.Video;
@@ -59,8 +59,9 @@ public class HomeController {
 		HomePage homePage = homeService.getHomePage();
 		
 		
-		List<ComDynamicMapper> comlist = comDynamicService.findByPage();
-		List<InstDynamicMapper> instlist = instDynamicService.findByPage();
+		List<ComDynamic> comlist = comDynamicService.findByPage();
+		List<InstDynamic> instlist = instDynamicService.findByPage();
+
 		List<Succstudent> studentlist = succstudentService.selectAll();
 		List<Video> videoList = homeService.getVideoList();
 
@@ -124,14 +125,15 @@ public class HomeController {
 		model.addAttribute("teacherList", list);
 		return course;
 	}
-/*	//跳转UI界面
+/*	//跳转H5界面
 	@RequestMapping("/h5.action")
 	public String toH5() throws Exception{
 		return "h5";
 	}
-	//跳转UI界面
+	//跳转java界面
 	@RequestMapping("/java.action")
 	public String toJAVA() throws Exception{
 		return "java";
 	}*/
+	
 }
