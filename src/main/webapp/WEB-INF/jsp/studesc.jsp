@@ -33,10 +33,10 @@
 							<span>【学员故事】</span>${studentDesc.name }</h1>
 						<div class="al_titles">
 							<span class="times">社区管理员 发表于<time>${studentDesc.post_time }</time></span>
-							<p>
+							<%-- <p>
 								<span><img src="img/article/yj.png" align="center" />${studentDesc.views }</span>
 								<span><img	src="img/article/zan.png" align="center" /> ${studentDesc.thumbups }</span>
-							</p>
+							</p> --%>
 						</div>
 					</div>
 					<div class="al_mian">
@@ -47,11 +47,11 @@
 						</h3>
 						<ul class="editor_cnt">${studentDesc.content }
 						</ul>
-						<div class="praise">
+						<%-- <div class="praise">
 							<a href="#"> <img src="img/article/preview_like_icon.png" />赞
 							</a> <span>${studentDesc.thumbups }</span>
 							<div>+1</div>
-						</div>
+						</div> --%>
 					</div>
 					<div class="al_footer">
 						<p class="recommended">精华推荐</p>

@@ -8,14 +8,14 @@
 <head>
 <meta charset="UTF-8">
 <title>知海社区</title>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/link-co-common.js"></script>
-<link rel="stylesheet" type="text/css" href="css/community.css" />
-<link rel="stylesheet" type="text/css" href="css/article_left.css" />
-<link rel="stylesheet" href="assets/design/css/trumbowyg.css">
-<script src="assets/jquery.min.js"></script>
-<script src="assets/trumbowyg.js"></script>
-<script src="assets/plugins/base64/trumbowyg.base64.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/js/link-co-common.js"></script>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/community.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/css/article_left.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/design/css/trumbowyg.css">
+<script src="${pageContext.request.contextPath }/assets/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath }/assets/trumbowyg.js"></script>
+<script src="${pageContext.request.contextPath }/assets/plugins/base64/trumbowyg.base64.js"></script>
 </head>
 <body>
 	<div class="mian">

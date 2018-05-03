@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hc.web.mapper.TeacherMapper">
+
+	<!-- 分页查询老师信息 -->
+	<select id="selectByPage" parameterType="com.hc.web.util.QueryVo" resultType="teacher">
+		select * from teacher limit #{beginIndex},#{pageSize}
+	</select>
+	<!-- 查询总记录数 -->
+	<select id="selectCount" resultType="int">
+		select count(*) from teacher
+	</select>
+	<!-- 通过所教课程查询老师信息 -->
+	<select id="selectByCourse" parameterType="string" resultType="teacher">
+		select * from teacher where t_course like "%${value}%"
+	</select>
+</mapper>

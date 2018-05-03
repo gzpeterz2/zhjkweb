@@ -4,6 +4,6 @@
 
 	<!-- 查询指定数量图片 -->
 	<select id="selectByNum" parameterType="int" resultType="chatPrintscreen">
-		select * from chat_printscreen order by c_id limit 0,#{num}
+		SELECT * FROM chat_printscreen ORDER BY c_id DESC LIMIT 0,#{num}
 	</select>
 </mapper>

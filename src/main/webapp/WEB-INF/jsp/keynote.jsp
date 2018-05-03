@@ -16,6 +16,7 @@
 <script src="assets/jquery.min.js"></script>
 <script src="assets/trumbowyg.js"></script>
 <script src="assets/plugins/base64/trumbowyg.base64.js"></script>
+<script src="assets/plugins/upload/trumbowyg.upload.js"></script>
 </head>
 <body>
 	<div class="mian">

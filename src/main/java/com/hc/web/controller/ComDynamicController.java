@@ -8,8 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.hc.web.mapper.ComDynamicMapper;
-
+import com.hc.web.po.ComDynamic;
 import com.hc.web.service.ComDynamicService;
 
 
@@ -22,12 +21,12 @@ public class ComDynamicController {
 	//获取学员动态前五条记录
 	@RequestMapping("/findByPage.action")
 	@ResponseBody
-	public List<ComDynamicMapper> findByPage(){
+	public List<ComDynamic> findByPage(){
 		/*PageBean<InstDynamicMapper> pageBean = new PageBean<InstDynamicMapper>();
 		pageBean.setPageCode(1);
 		pageBean.setPageSize(5);*/
 		
-		List<ComDynamicMapper> list = new ArrayList<ComDynamicMapper>();
+		List<ComDynamic> list = new ArrayList<ComDynamic>();
 		list = comDynamicService.findByPage();
 		
 		return list;

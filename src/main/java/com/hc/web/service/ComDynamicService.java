@@ -7,7 +7,7 @@ import com.hc.web.po.ComDynamic;
 
 public interface ComDynamicService {
 
-	List<ComDynamicMapper> findByPage();
+	List<ComDynamic> findByPage();
 
 
 }

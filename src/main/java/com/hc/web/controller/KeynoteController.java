@@ -20,6 +20,11 @@ import com.hc.web.service.CommunityService;
 import com.hc.web.util.HCResult;
 import com.hc.web.util.UploadUtils;
 
+
+/**
+ *  登录
+ * @author ouyangliang
+ */
 @Controller
 public class KeynoteController {
 	@Value("${STUDENT_PHOTOS_UPLOAD_PATH}")

@@ -54,14 +54,14 @@
 			<li>
 				<a href="#">全部课程</a>
 				<ol>
-					<li><a href="ui.html">UID设计</a></li>
-					<li><a href="h5.html">Web前端</a></li>
-					<li><a href="java.html">Java开发</a></li>
+					<li><a href="ui.action">UID设计</a></li>
+					<li><a href="h5.action">Web前端</a></li>
+					<li><a href="java.action">Java开发</a></li>
 				</ol>
 			</li>
-			<li><a href="employment.html">就业行情</a></li>
-			<li><a href="teachers.html">师资力量</a></li>
-			<li><a href="dynamic.html">资讯动态</a></li>
+			<li><a href="employment.action">就业行情</a></li>
+			<li><a href="teachers.action?pageCode=1">师资力量</a></li>
+			<li><a href="instDynamicPageQuery.action?pageCode=1">资讯动态</a></li>
 			<li>
 				<a href="students.action?pageCode=1">学员天地</a>
 				<!--<ol>-->
@@ -74,8 +74,8 @@
 			<li>
 				<a href="#">关于我们</a>
 				<ol>
-					<li><a href="about_us.html">学院介绍</a></li>
-					<li><a href="environment.html">教学环境</a></li>
+					<li><a href="about_us.action">学院介绍</a></li>
+					<li><a href="environment.action">教学环境</a></li>
 					<!--<li><a href="#">常见问题</a></li>-->
 				</ol>
 			</li>

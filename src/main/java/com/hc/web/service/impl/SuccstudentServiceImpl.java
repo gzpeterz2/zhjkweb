@@ -18,6 +18,7 @@ public class SuccstudentServiceImpl implements SuccstudentService {
 	@Autowired
 	private SuccstudentMapper succstudentMapper;
 	
+	//学员天地分页显示每页显示的数据数量size
 	@Value("${STUDENT_PAGE_SIZE}")
 	private int STUDENT_PAGE_SIZE;
 	

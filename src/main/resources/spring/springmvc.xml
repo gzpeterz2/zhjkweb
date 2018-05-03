@@ -22,10 +22,9 @@
      
      <context:property-placeholder location="classpath:*.properties" />
       
-      <mvc:resources location="/js/" mapping="/js/**"/>
-      <mvc:resources location="/pic/" mapping="/pic/**"/>
-
-
+     <mvc:resources location="/js/" mapping="/js/**"/>
+     <mvc:resources location="/pic/" mapping="/pic/**"/>
+      
      <context:component-scan base-package="com.hc.web.controller"/>
      
 <!-- <mvc:default-servlet-handler/> -->
