@@ -23,7 +23,7 @@ import com.hc.web.util.HCResult;
 @Controller
 public class LoginController {
 
-	@RequestMapping("tologin.action")
+	@RequestMapping("/tologin")
 	public String tologin(){
 		return "login";
 	}
@@ -32,7 +32,7 @@ public class LoginController {
 	@Autowired
 	private LoginService loginService;
 	
-	@RequestMapping("login.action")
+	@RequestMapping("/login")
 	@ResponseBody
 	public HCResult login(WebUser webUser,HttpServletRequest request,HttpServletResponse response){
 		
@@ -50,7 +50,7 @@ public class LoginController {
 		return HCResult.ok();
 	}
 	
-	@RequestMapping("logout.action")
+	@RequestMapping("/logout")
 	public String logout(HttpServletRequest request){
 		HttpSession session = request.getSession();
 		session.setAttribute("user", null);
@@ -58,7 +58,7 @@ public class LoginController {
 		return "index";
 	}
 	
-	@RequestMapping("isLogin")
+	@RequestMapping("/isLogin")
 	@ResponseBody
 	public HCResult isLogin(HttpServletRequest request){
 		Object object = request.getSession().getAttribute("user");
