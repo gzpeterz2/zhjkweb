@@ -53,7 +53,7 @@ public class HomeController {
 	
 	
 	//官网首页
-	@RequestMapping("/index.action")
+	@RequestMapping("/index")
 	public ModelAndView homePage() throws Exception {
 		ModelAndView mv = new ModelAndView();
 		HomePage homePage = homeService.getHomePage();

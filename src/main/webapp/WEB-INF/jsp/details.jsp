@@ -16,8 +16,8 @@
 		<div class="d_mian">
 			<div class="content">
 				<p class="title">
-					<a href="index.html">首页 </a>&gt; 
-					<a href="dynamic.html">学院动态 </a>&gt;
+					<a href="index.action">首页 </a>&gt; 
+					<a href="instDynamicPageQuery.action?pageCode=1">学院动态 </a>&gt;
 					<a href="#">学院动态详情</a>
 				</p>
 				<div class="cnt_box">
