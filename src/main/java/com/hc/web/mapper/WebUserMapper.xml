@@ -12,5 +12,66 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM webuser WHERE  u_code = #{v}
 	</select>
 	
+	<select id="getMailCountByMail" parameterType="String" resultType="Integer">
+		SELECT COUNT(1) FROM webuser WHERE  u_email = #{v}
+	</select>
+	
+	<insert id="insertWebuser" parameterType="WebUser">
+		insert into webuser
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="u_id != null">
+				u_id,
+			</if>
+			<if test="u_code != null">
+				u_code,
+			</if>
+			<if test="u_password != null">
+				u_password,
+			</if>
+			<if test="u_name != null">
+				u_name,
+			</if>
+			<if test="u_head != null">
+				u_head,
+			</if>
+			<if test="u_level != null">
+				u_level,
+			</if>
+			<if test="u_phone != null">
+				u_phone,
+			</if>	
+			<if test="u_email != null">
+				u_email,
+			</if>
+				
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="u_id != null">
+				#{u_id,jdbcType=INTEGER},
+			</if>
+			<if test="u_code != null">
+				#{u_code,jdbcType=VARCHAR},
+			</if>
+			<if test="u_password != null">
+				#{u_password,jdbcType=VARCHAR},
+			</if>
+			<if test="u_name != null">
+				#{u_name,jdbcType=VARCHAR},
+			</if>
+			<if test="u_head != null">
+				#{u_head,jdbcType=VARCHAR},
+			</if>
+			<if test="u_level != null">
+				#{u_level,jdbcType=INTEGER},
+			</if>
+			<if test="u_phone != null">
+				#{u_phone,jdbcType=VARCHAR},
+			</if>
+			<if test="u_email != null">
+				#{u_email,jdbcType=VARCHAR},
+			</if>
+			
+		</trim>
+	</insert>
 	
 </mapper>

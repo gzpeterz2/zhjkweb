@@ -29,16 +29,17 @@
 					<p class="tishi">
 						<img src="img/login/cw.png" align="center" />用户不存在或密码不正确
 					</p>
+					<span id="mailwarning" style="color:red;font-size:14px" >${msg }</span>
 					<div class="user_name">
 						<span class="user_img"> <img src="img/login/dl.png" alt="" />
-						</span> <input type="text" name="u_code" placeholder="手机号/用户名/邮箱" />
+						</span> <input type="text" name="u_code" placeholder="用户名" />
 					</div>
 					<div class="user_password">
 						<span class="user_img"> <img src="img/login/suo.png" alt="" />
 						</span> <input type="password" name="u_password" placeholder="密码" />
 					</div>
 					<p class="user_interlinkage row">
-						<a href="register.html" class="ljzc">立即注册</a> <a
+						<a href="toregister.action" class="ljzc">立即注册</a> <a
 							href="newpassword.html" class="wjmm">忘记密码？</a>
 					</p>
 					<div class="user_bnt_login">立即登录</div>
