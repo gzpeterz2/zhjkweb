@@ -16,8 +16,8 @@
 		<div class="d_mian">
 			<div class="content">
 				<p class="title">
-					<a href="index.html">首页 </a>&gt; 
-					<a href="dynamic.html">学院动态 </a>&gt;
+					<a href="index.action">首页 </a>&gt; 
+					<a href="instDynamicPageQuery.action?pageCode=1">学院动态 </a>&gt;
 					<a href="#">学院动态详情</a>
 				</p>
 				<div class="cnt_box">
@@ -39,8 +39,14 @@
 					</div>
 					<div class="cnt_share">
 						<div class="share_l">
-							<p>上一篇：<span>感谢恩师！知海匠库互联网学院</span><a href="article.html"></a></p>
-							<p>上一篇：<span>感谢恩师！知海匠库互联网学院</span><a href="article.html"></a></p>
+							<c:if test="${not empty before }">
+								<p>上一篇：<span>${before.title }</span><a href="instDynamic_${before.art_id }.action"></a></p>
+							</c:if>
+							<c:if test="${not empty after }">
+								<p>下一篇：<span>${after.title }</span><a href="instDynamic_${after.art_id }.action"></a></p>
+							</c:if>
+							<!-- <p>上一篇：<span>感谢恩师！知海匠库互联网学院</span><a href="article.html"></a></p>
+							<p>上一篇：<span>感谢恩师！知海匠库互联网学院</span><a href="article.html"></a></p> -->
 						</div>
 						<div class="share_r">
 							分享到：
@@ -54,12 +60,15 @@
 					<img src="img/details/R_1.png"/>
 					<div class="recommended">
 						<p class="r_title">推荐阅读</p>
-						<p><a href="article.html">知海匠库正能量：我们需要梦想、梦想...</a></p>
+						<c:forEach items="${hotList }" var="hl">
+							<p><a href="instDynamic_${hl.art_id }.action">${hl.title }</a></p>
+						</c:forEach>
+						<!-- <p><a href="article.html">知海匠库正能量：我们需要梦想、梦想...</a></p>
 						<p><a href="article.html">知海匠库UI设计班u170901交流</a></p>
 						<p><a href="article.html">知海匠库互联网学院再添分校</a></p>
 						<p><a href="article.html">知海匠库UI设计班u170901交流</a></p>
 						<p><a href="article.html">知海匠库互联网学院再添分校</a></p>
-						<p><a href="article.html">知海匠库UI设计班u170901交流</a></p>
+						<p><a href="article.html">知海匠库UI设计班u170901交流</a></p> -->
 					</div>
 				</div>
 			</div>

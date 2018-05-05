@@ -51,8 +51,19 @@ public class InstDynamicController {
 		int end = requestURL.lastIndexOf(".action");
 		String instDynamicid = requestURL.substring(begin, end);
 		Integer artId = Integer.valueOf(instDynamicid);
+		
 		InstDynamic instDynamic = instDynamicService.getInstDynamicDescById(artId);
+		//获取当前记录的上一条记录
+		InstDynamic before = instDynamicService.getBeforeId(artId);
+		//获取当前记录的下一条记录
+		InstDynamic after = instDynamicService.getAfterId(artId);
+		//获取6（根据页面显示条数调整）条其他资讯
+		List<InstDynamic> list = instDynamicService.getOtherList(artId);
+		
 		model.addAttribute("instDynamic", instDynamic);
+		model.addAttribute("before", before);
+		model.addAttribute("after", after);
+		model.addAttribute("hotList", list);
 		
 		return "details";
 	}

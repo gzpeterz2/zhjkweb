@@ -23,9 +23,9 @@
 		<div class="video-banner">
 			<ul class="banner_items">
 				<!--<li class="xianshi"><img src="img/home/3.png"/><a href="JavaScript:;"></a></li>-->
-				<li class="xianshi" ><img src="${homePage.bigBanner1.src}"/><a href="h5.html"></a></li>
-				<li ><img src="${homePage.bigBanner2.src}"/><a href="java.html"></a></li>
-				<li ><img src="${homePage.bigBanner3.src}"/><a href="${homePage.bigBanner2.url}"></a></li>
+				<li class="xianshi" ><img src="${homePage.bigBanner1.src}"/><a href="${homePage.bigBanner1.url}"></a></li>
+				<li ><img src="${homePage.bigBanner2.src}"/><a href="${homePage.bigBanner2.url}"></a></li>
+				<li ><img src="${homePage.bigBanner3.src}"/><a href="${homePage.bigBanner3.url}"></a></li>
 			</ul>
 			<ul class="banner_lists">
 				<li class="bg_color"></li>
@@ -61,7 +61,7 @@
 							<div class="cnt_right">
 								<ul id="inst_dynamic">
 									<c:forEach items="${instDynamic }" var="inst">	
-										<li><a href="details.html" target="_blank">${inst.title }</a></li>					
+										<li><a href="instDynamic_${inst.art_id }.action" target="_blank">${inst.title }</a></li>					
 									<!-- <li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
 									<li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>
 									<li><a href="details.html" target="_blank">【圣诞大狂欢】知海匠库沙滩Party放飞自我</a></li>

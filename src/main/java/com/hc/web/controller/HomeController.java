@@ -53,7 +53,7 @@ public class HomeController {
 	
 	
 	//官网首页
-	@RequestMapping("/index.action")
+	@RequestMapping("/index")
 	public ModelAndView homePage() throws Exception {
 		ModelAndView mv = new ModelAndView();
 		HomePage homePage = homeService.getHomePage();
@@ -118,7 +118,7 @@ public class HomeController {
 		return "environment";
 	}
 	
-	//跳转UI界面
+	//跳转课程界面
 	@RequestMapping("/{course}")
 	public String toUID(@PathVariable String course,Model model) throws Exception{
 		List<Teacher> list = teacherService.selectByCourse(course);

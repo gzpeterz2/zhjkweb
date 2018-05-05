@@ -18,4 +18,16 @@
   <select id="findById" parameterType="Integer" resultType="InstDynamic">
   	select * from inst_dynamic where art_id = #{artId}
   </select>
+  
+  <select id="getListExt" parameterType="Integer" resultType="InstDynamic">
+  	select * from inst_dynamic where art_id != #{artId} order by views desc limit 0,6 
+  </select>
+  
+  <select id="findBeforeId" parameterType="Integer" resultType="InstDynamic">
+  	select * from inst_dynamic where art_id &lt; #{artId} order by art_id desc limit 1
+  </select>
+  
+  <select id="findAfterId" parameterType="Integer" resultType="InstDynamic">
+  	select * from inst_dynamic where art_id &gt; #{artId} order by art_id asc limit 1
+  </select>
 </mapper>

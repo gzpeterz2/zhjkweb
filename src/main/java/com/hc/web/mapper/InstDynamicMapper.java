@@ -16,4 +16,10 @@ public interface InstDynamicMapper {
 	public List<InstDynamic> queryByPage(QueryVo vo);
 
 	public InstDynamic findById(Integer artId);
+
+	public List<InstDynamic> getListExt(Integer artId);
+	//获取当前记录的上一条记录
+	public InstDynamic findBeforeId(Integer artId);
+	//获取当前记录的下一条记录
+	public InstDynamic findAfterId(Integer artId);
 }

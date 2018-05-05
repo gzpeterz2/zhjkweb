@@ -56,4 +56,24 @@ public class InstDynamicServiceImpl implements InstDynamicService {
 		return instDynamicMapper.findById(artId);
 	}
 
+	@Override
+	public List<InstDynamic> getOtherList(Integer artId) {
+		
+		return instDynamicMapper.getListExt(artId);
+	}
+
+	//获取当前记录的上一条记录
+	@Override
+	public InstDynamic getBeforeId(Integer artId) {
+		
+		return instDynamicMapper.findBeforeId(artId);
+	}
+
+	//获取当前记录的下一条记录
+	@Override
+	public InstDynamic getAfterId(Integer artId) {
+		
+		return instDynamicMapper.findAfterId(artId);
+	}
+
 }
