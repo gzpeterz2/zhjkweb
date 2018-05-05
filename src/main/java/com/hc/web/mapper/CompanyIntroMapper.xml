@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hc.web.mapper.CompanyIntroMapper">
+	
+	<!-- 通过显示状态查询公司简介 -->
+	<select id="selectByStatus" parameterType="int" resultType="companyIntro">
+		select * from company_intro where status = #{status}
+	</select>
+	
+</mapper>

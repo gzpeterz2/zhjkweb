@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hc.web.mapper.MasterMapper">
+	<!-- 通过是否显示状态查询大咖-->
+	<select id="selectByStatus" parameterType="int" resultType="master">
+		select * from master where status = #{status}
+	</select>
+</mapper>
