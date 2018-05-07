@@ -21,6 +21,7 @@ import com.hc.web.po.Master;
 import com.hc.web.po.Succstudent;
 import com.hc.web.po.Teacher;
 import com.hc.web.po.Video;
+import com.hc.web.service.BannerService;
 import com.hc.web.service.ChatPrintscreenService;
 import com.hc.web.service.ComDynamicService;
 import com.hc.web.service.CompanyIntroService;
@@ -48,6 +49,10 @@ public class HomeController {
 	
 	@Autowired
 	private InstDynamicService instDynamicService;
+	
+	//banner服务
+	@Autowired
+	private BannerService bannerService;
 	
 	//学员信息管理服务
 	@Autowired
@@ -103,10 +108,12 @@ public class HomeController {
 	//跳转就业行情页面
 	@RequestMapping("/employment")
 	public String employmentPage(Model model) throws Exception{
+		Banner banner = bannerService.selectByLocation("employment");
 		List<Succstudent> list = succstudentService.selectAll();
 		List<ChatPrintscreen> chatlist = chatPrintscreenService.selectByNum(CHAT_PRINTSCREEN_SIZE);
 		model.addAttribute("chatlist", chatlist);
 		model.addAttribute("studentlist", list);
+		model.addAttribute("banner", banner);
 		return "employment";
 	}
 	
@@ -114,15 +121,19 @@ public class HomeController {
 	@RequestMapping("/students")
 	public String studentPage(int pageCode,Model model) throws Exception{
 		PageBean<Succstudent> pageBean = succstudentService.selectByPage(pageCode);
+		Banner banner = bannerService.selectByLocation("students");
 		model.addAttribute("pageBean", pageBean);
+		model.addAttribute("banner", banner);
 		return "student";
 	}
 	
 	//跳转师资力量页面
 	@RequestMapping("/teachers")
 	public String toTeachersPage(int pageCode,Model model) throws Exception{
+		Banner banner = bannerService.selectByLocation("teachers");
 		PageBean<Teacher> pageBean = teacherService.selectByPage(pageCode);
 		model.addAttribute("pageBean", pageBean);
+		model.addAttribute("banner", banner);
 		return "teachers";
 	}
 	
@@ -138,7 +149,7 @@ public class HomeController {
 		List<Master> masterList = masterService.selectByStatus();
 		List<Cooperative> cooperativeList = cooperativeService.selectByStatus();
 		List<CompanyIntro> companyIntro = companyIntroService.selectByStatus();
-		Banner banner = companyIntroService.selectByLocation();
+		Banner banner = bannerService.selectByLocation("school");
 		model.addAttribute("banner", banner);
 		model.addAttribute("masterList", masterList);
 		model.addAttribute("cooperativeList", cooperativeList);
@@ -155,8 +166,10 @@ public class HomeController {
 	//跳转课程界面
 	@RequestMapping("/{course}")
 	public String toUID(@PathVariable String course,Model model) throws Exception{
+//		Banner banner = bannerService.selectByLocation(course);
 		List<Teacher> list = teacherService.selectByCourse(course);
 		model.addAttribute("teacherList", list);
+//		model.addAttribute("banner", banner);
 		return course;
 	}
 /*	//跳转H5界面
