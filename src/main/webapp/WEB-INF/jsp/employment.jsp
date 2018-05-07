@@ -17,7 +17,7 @@
 	</head>
 	<body>
 		<div class="video-banner">
-			<img src="img/employment/jyhq_qtbanner.png"/>
+			<img src="${banner.src }"/>
 		</div>
 		<div class="employment-mian">
 			<div class="content">

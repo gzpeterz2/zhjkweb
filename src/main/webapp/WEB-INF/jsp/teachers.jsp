@@ -13,7 +13,7 @@
 	</head>
 	<body>
 		<div class="video-banner">
-			<img src="img/teachers/banner.png"/>
+			<img src="${banner.src }"/>
 		</div>
 		<div class="content">
 			<div class="c_cnt">

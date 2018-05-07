@@ -10,19 +10,33 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.hc.web.po.Banner;
 import com.hc.web.po.ChatPrintscreen;
 import com.hc.web.po.ComDynamic;
+<<<<<<< HEAD
 import com.hc.web.po.Enviroment;
+=======
+import com.hc.web.po.CompanyIntro;
+import com.hc.web.po.Cooperative;
+>>>>>>> 0174496e97199b62fd0dc0fc88550b37a31d2c38
 import com.hc.web.po.HomePage;
 import com.hc.web.po.InstDynamic;
+import com.hc.web.po.Master;
 import com.hc.web.po.Succstudent;
 import com.hc.web.po.Teacher;
 import com.hc.web.po.Video;
+import com.hc.web.service.BannerService;
 import com.hc.web.service.ChatPrintscreenService;
 import com.hc.web.service.ComDynamicService;
+<<<<<<< HEAD
 import com.hc.web.service.EnviromentService;
+=======
+import com.hc.web.service.CompanyIntroService;
+import com.hc.web.service.CooperativeService;
+>>>>>>> 0174496e97199b62fd0dc0fc88550b37a31d2c38
 import com.hc.web.service.HomeService;
 import com.hc.web.service.InstDynamicService;
+import com.hc.web.service.MasterService;
 import com.hc.web.service.SuccstudentService;
 import com.hc.web.service.TeacherService;
 import com.hc.web.util.PageBean;
@@ -33,25 +47,51 @@ import com.hc.web.util.PageBean;
  */
 @Controller
 public class HomeController {
+	
 	//首页服务
 	@Autowired
 	private HomeService homeService;
+	
 	@Autowired
 	private ComDynamicService comDynamicService;
+	
 	@Autowired
 	private InstDynamicService instDynamicService;
+	
+	//banner服务
+	@Autowired
+	private BannerService bannerService;
+	
 	//学员信息管理服务
 	@Autowired
 	private SuccstudentService succstudentService;
+	
 	//师资力量服务
 	@Autowired
 	private TeacherService teacherService;
+	
 	//就业行情页面聊天截图服务
 	@Autowired
 	private ChatPrintscreenService chatPrintscreenService;
+
 	//教学环境服务
 	@Autowired
 	private EnviromentService enviromentService;
+
+	
+	//学员介绍页面大咖信息管理service
+	@Autowired
+	private MasterService masterService;
+	
+	//学员介绍页面合作企业信息管理service
+	@Autowired
+	private CooperativeService cooperativeService;
+	
+	//学员介绍页面公司简介service
+	@Autowired
+	private CompanyIntroService companyIntroService;
+	
+
 	//聊天截图显示张数
 	@Value("${CHAT_PRINTSCREEN_SIZE}")
 	private int CHAT_PRINTSCREEN_SIZE;
@@ -82,10 +122,12 @@ public class HomeController {
 	//跳转就业行情页面
 	@RequestMapping("/employment")
 	public String employmentPage(Model model) throws Exception{
+		Banner banner = bannerService.selectByLocation("employment");
 		List<Succstudent> list = succstudentService.selectAll();
 		List<ChatPrintscreen> chatlist = chatPrintscreenService.selectByNum(CHAT_PRINTSCREEN_SIZE);
 		model.addAttribute("chatlist", chatlist);
 		model.addAttribute("studentlist", list);
+		model.addAttribute("banner", banner);
 		return "employment";
 	}
 	
@@ -93,15 +135,19 @@ public class HomeController {
 	@RequestMapping("/students")
 	public String studentPage(int pageCode,Model model) throws Exception{
 		PageBean<Succstudent> pageBean = succstudentService.selectByPage(pageCode);
+		Banner banner = bannerService.selectByLocation("students");
 		model.addAttribute("pageBean", pageBean);
+		model.addAttribute("banner", banner);
 		return "student";
 	}
 	
 	//跳转师资力量页面
 	@RequestMapping("/teachers")
 	public String toTeachersPage(int pageCode,Model model) throws Exception{
+		Banner banner = bannerService.selectByLocation("teachers");
 		PageBean<Teacher> pageBean = teacherService.selectByPage(pageCode);
 		model.addAttribute("pageBean", pageBean);
+		model.addAttribute("banner", banner);
 		return "teachers";
 	}
 	
@@ -113,7 +159,15 @@ public class HomeController {
 	
 	//跳转学院介绍界面
 	@RequestMapping("/about_us")
-	public String toAboutUsPage() throws Exception{
+	public String toAboutUsPage(Model model) throws Exception{
+		List<Master> masterList = masterService.selectByStatus();
+		List<Cooperative> cooperativeList = cooperativeService.selectByStatus();
+		List<CompanyIntro> companyIntro = companyIntroService.selectByStatus();
+		Banner banner = bannerService.selectByLocation("school");
+		model.addAttribute("banner", banner);
+		model.addAttribute("masterList", masterList);
+		model.addAttribute("cooperativeList", cooperativeList);
+		model.addAttribute("companyIntro", companyIntro);
 		return "about_us";
 	}
 	
@@ -129,8 +183,10 @@ public class HomeController {
 	//跳转课程界面
 	@RequestMapping("/{course}")
 	public String toUID(@PathVariable String course,Model model) throws Exception{
+//		Banner banner = bannerService.selectByLocation(course);
 		List<Teacher> list = teacherService.selectByCourse(course);
 		model.addAttribute("teacherList", list);
+//		model.addAttribute("banner", banner);
 		return course;
 	}
 /*	//跳转H5界面

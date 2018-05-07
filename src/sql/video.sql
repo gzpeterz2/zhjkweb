@@ -30,8 +30,8 @@ CREATE TABLE `video` (
   `v_isrecommend` tinyint(1) DEFAULT NULL COMMENT '是否首页推荐',
   `v_catelog` varchar(32) DEFAULT NULL COMMENT '课程目录',
   `v_cover` varchar(100) DEFAULT NULL COMMENT '视频封面',
-  `v_describe` varchar(500) DEFAULT NULL COMMENT '描述',
-  `v_desc` varchar(200) DEFAULT NULL,
+  `v_describe` varchar(1000) DEFAULT NULL COMMENT '描述',
+  `v_desc` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`v_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8;
 
