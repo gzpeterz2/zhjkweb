@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.hc.web.po.ChatPrintscreen;
 import com.hc.web.po.ComDynamic;
+import com.hc.web.po.Enviroment;
 import com.hc.web.po.HomePage;
 import com.hc.web.po.InstDynamic;
 import com.hc.web.po.Succstudent;
@@ -19,6 +20,7 @@ import com.hc.web.po.Teacher;
 import com.hc.web.po.Video;
 import com.hc.web.service.ChatPrintscreenService;
 import com.hc.web.service.ComDynamicService;
+import com.hc.web.service.EnviromentService;
 import com.hc.web.service.HomeService;
 import com.hc.web.service.InstDynamicService;
 import com.hc.web.service.SuccstudentService;
@@ -47,6 +49,9 @@ public class HomeController {
 	//就业行情页面聊天截图服务
 	@Autowired
 	private ChatPrintscreenService chatPrintscreenService;
+	//教学环境服务
+	@Autowired
+	private EnviromentService enviromentService;
 	//聊天截图显示张数
 	@Value("${CHAT_PRINTSCREEN_SIZE}")
 	private int CHAT_PRINTSCREEN_SIZE;
@@ -114,7 +119,10 @@ public class HomeController {
 	
 	//跳转教学环境界面
 	@RequestMapping("/environment")
-	public String toEnvironment() throws Exception{
+	public String toEnvironment(Model model) throws Exception{
+		List<Enviroment> list = enviromentService.getList();
+		System.out.println(list);
+		model.addAttribute("envlist", list);
 		return "environment";
 	}
 	

@@ -6,13 +6,14 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.hc.web.service.InstDynamicService;
 import com.hc.web.util.PageBean;
 import com.hc.web.util.QueryVo;
 import com.hc.web.mapper.InstDynamicMapper;
 import com.hc.web.po.InstDynamic;
-
+@Service
 public class InstDynamicServiceImpl implements InstDynamicService {
 	@Autowired
 	private InstDynamicMapper instDynamicMapper;
